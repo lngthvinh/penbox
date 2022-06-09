@@ -1,24 +1,24 @@
 
-                      Web Hacking
-                      
-                      
+                        Web Hacking
+                        
+                        
 Walking An Application
 
-   View Source - Use your browser to view the human-readable source code of a website.
-   Inspector - Learn how to inspect page elements and make changes to view usually blocked content.
-   Debugger - Inspect and control the flow of a page's JavaScript
-   Network - See all the network requests a page makes.
-   
+    View Source - Use your browser to view the human-readable source code of a website.
+    Inspector - Learn how to inspect page elements and make changes to view usually blocked content.
+    Debugger - Inspect and control the flow of a page's JavaScript
+    Network - See all the network requests a page makes.
+    
 Content Discovery
 
-   robots.txt
-   favicon
-      e.g. curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico | md5sum
-   sitemap.xml
-   HTTP Headers
-   Framework Stack (tìm framework gốc)
-   OSINT Wayback Machine: https://archive.org/web/
-   
+    robots.txt
+    favicon
+        e.g. curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico | md5sum
+    sitemap.xml
+    HTTP Headers
+    Framework Stack (tìm framework gốc)
+    OSINT Wayback Machine: https://archive.org/web/
+    
 Automated Discovery
 
     dirb http://10.10.10.10/ /usr/share/SecLists/Discovery/Web-Content/common.txt
