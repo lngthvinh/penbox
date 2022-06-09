@@ -30,6 +30,8 @@ Forensic
   * exiftool DOCUMENT.pdf
 
 
+                        
+                        
                         Network Security
                         
                         
@@ -40,6 +42,8 @@ Nmap
   * nmap -sV 10.10.10.10
 
 
+                        
+                        
                         Linux PrivEsc
                         
                         
