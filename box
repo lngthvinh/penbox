@@ -21,6 +21,8 @@ Content Discovery
     
 Automated Discovery
 
+    Wappalyzer
+    nuclei -u http://10.10.10.10/
     dirb http://10.10.10.10/ /usr/share/SecLists/Discovery/Web-Content/common.txt
     dirsearch -u http://10.10.10.10/
     dirsearch -u http://10.10.10.10/ -w /usr/share/SecLists/Discovery/Web-Content/common.txt
