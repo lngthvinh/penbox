@@ -37,6 +37,9 @@ Automated Discovery
     https://dnsdumpster.com/
     subfinder -d 10.10.10.10
     knockpy 10.10.10.10
+    // RECON4: Wayback Machine & Crawling
+    https://archive.org/web/
+    printf example.com | gau
 
 Forensic
     exiftool DOCUMENT.pdf
