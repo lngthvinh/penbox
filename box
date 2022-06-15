@@ -21,12 +21,22 @@ Content Discovery
     
 Automated Discovery
 
+    // RECON1: Detect Technologies
     Wappalyzer
     nuclei -u http://10.10.10.10/
+    // RECON2: Finding Hidden Contents
+    nmap -Pn 10.10.10.10
+    nmap -sV 10.10.10.10
     dirb http://10.10.10.10/ /usr/share/SecLists/Discovery/Web-Content/common.txt
     dirsearch -u http://10.10.10.10/
     dirsearch -u http://10.10.10.10/ -w /usr/share/SecLists/Discovery/Web-Content/common.txt
     gobuster dir -u http://10.10.10.10/ -w /usr/share/SecLists/Discovery/Web-Content/common.txt
+    arjun -u https://10.10.10.10/login
+    // RECON3: Subdomain Enumeration & HTTP
+    https://crt.sh/
+    https://dnsdumpster.com/
+    subfinder -d 10.10.10.10
+    knockpy 10.10.10.10
 
 Forensic
     exiftool DOCUMENT.pdf
