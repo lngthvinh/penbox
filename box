@@ -21,6 +21,11 @@ Content Discovery
     
 Automated Discovery
 
+    // RECON3: Subdomain Enumeration & HTTP
+    https://crt.sh/
+    https://dnsdumpster.com/
+    subfinder -d 10.10.10.10
+    knockpy 10.10.10.10
     // RECON1: Detect Technologies
     Wappalyzer
     nuclei -u http://10.10.10.10/
@@ -32,11 +37,6 @@ Automated Discovery
     dirsearch -u http://10.10.10.10/ -w /usr/share/SecLists/Discovery/Web-Content/common.txt
     gobuster dir -u http://10.10.10.10/ -w /usr/share/SecLists/Discovery/Web-Content/common.txt
     arjun -u https://10.10.10.10/login
-    // RECON3: Subdomain Enumeration & HTTP
-    https://crt.sh/
-    https://dnsdumpster.com/
-    subfinder -d 10.10.10.10
-    knockpy 10.10.10.10
     // RECON4: Wayback Machine & Crawling
     https://archive.org/web/
     printf example.com | gau
