@@ -18,5 +18,9 @@ tplmap
 ```
 
 ```
+Google Search + Google Lens + Google Maps
+https://archive.org/web/
 https://epieos.com/
+https://wigle.net/
+https://ollie-boyd.github.io/Linkedin-post-timestamp-extractor/
 ```
