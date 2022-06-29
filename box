@@ -28,8 +28,8 @@ Automated Discovery
     knockpy 10.10.10.10
     // RECON1: Detect Technologies
     Wappalyzer
-    nuclei -u http://10.10.10.10/
-    nuclei -t nuclei-templates/ -u http://10.10.10.10/
+    nuclei -u http://10.10.10.10/ -o output.txt
+    nuclei -t nuclei-templates/ -u http://10.10.10.10/ -o output.txt
     B=<domain>;subfinder -d $B | httprobe | tee ./sub-domain/$B | nuclei -t nuclei-templates/ -o ./project-pentest/$B-output.txt
     // RECON2: Finding Hidden Contents
     nmap -Pn 10.10.10.10
