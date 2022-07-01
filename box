@@ -34,7 +34,7 @@ Automated Discovery
     // RECON2: Finding Hidden Contents
     nmap -Pn 10.10.10.10
     nmap -sV 10.10.10.10
-    B=<ip>;nmap -sV $B -vv -oN ./nmap/$B-output.txt -p-
+    B=<ip>;nmap -sC -sV $B -vv -oN ./nmap/$B-output.txt -p-
     dirb http://10.10.10.10/ /usr/share/SecLists/Discovery/Web-Content/common.txt
     dirsearch -u http://10.10.10.10/
     dirsearch -u http://10.10.10.10/ -w /usr/share/SecLists/Discovery/Web-Content/common.txt
