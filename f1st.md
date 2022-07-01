@@ -10,6 +10,8 @@ foremost
 binwalk
 audacity
 stegsolve
+steghide
+stegcracker
 tweakpng
 ```
 
