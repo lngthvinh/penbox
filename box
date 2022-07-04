@@ -38,7 +38,7 @@ Automated Discovery
     dirb http://10.10.10.10/ /usr/share/SecLists/Discovery/Web-Content/common.txt
     dirsearch -u http://10.10.10.10/
     dirsearch -u http://10.10.10.10/ -w /usr/share/SecLists/Discovery/Web-Content/common.txt
-    dirsearch -u http://10.10.10.10/ -t 100 -r -x 400,403,404 -o ./output.txt
+    dirsearch -u http://10.10.10.10/ -t 100 -r -i 200,301 -o ./output.txt
     gobuster dir -u http://10.10.10.10/ -w /usr/share/SecLists/Discovery/Web-Content/common.txt
     arjun -u https://10.10.10.10/login
     // RECON4: Wayback Machine & Crawling
