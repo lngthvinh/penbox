@@ -57,7 +57,10 @@ Burp Suite + Vega + Zaproxy + Nikto (B=<domain/ip>;nikto -h $B -p 80,443 -o nikt
 ---
 **TODO**
 ```
-nmap --script http-methods <target>
+nmap -vv --script http-methods <target>
+nmap -vv -p 445 --script=smb-check-vulns --script-args=unsafe=1 <target>
+nmap --script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -p 21 <target>
+python2 shocker.py -H southtelecom.vn --command "/bin/cat /etc/passwd" -c /cgi-bin/status --verbose
 curl -s -D- <url> | grep -i strict
 python3 corsy.py -u <url>
 https://csp-evaluator.withgoogle.com/
@@ -102,54 +105,92 @@ hydra -l <username> -P <wordlist> MACHINE_IP http-post-form "/login:username=^US
 
 ## Authorization Testing
 
-| Test ID           | Test Name                                                                  | How to Test               |
-|:------------------|:---------------------------------------------------------------------------|:--------------------------|
-| **WSTG-ATHZ**     | **Authorization Testing**                                                  |        |       |
-| WSTG-ATHZ-01      | Testing Directory Traversal File Include                                   |        |       |
-| WSTG-ATHZ-02      | Testing for Bypassing Authorization Schema                                 |        |       |
-| WSTG-ATHZ-03      | Testing for Privilege Escalation                                           |        |       |
-| WSTG-ATHZ-04      | Testing for Insecure Direct Object References                              |        |       |
+| Test ID           | Test Name                                                                  | How to Test          |
+|:------------------|:---------------------------------------------------------------------------|:---------------------|
+| **WSTG-ATHZ**     | **Authorization Testing**                                                  |                      |
+| WSTG-ATHZ-01      | Testing Directory Traversal File Include                                   | DirTraversal/LFI/RFI |
+| WSTG-ATHZ-02      | Testing for Bypassing Authorization Schema                                 |                      |
+| WSTG-ATHZ-03      | Testing for Privilege Escalation                                           |                      |
+| WSTG-ATHZ-04      | Testing for Insecure Direct Object References                              |                      |
 
+---
+**TODO**
+- [PayloadsAllTheThings - Directory Traversal](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Directory%20Traversal)
+- [PayloadsAllTheThings - File Inclusion](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion)
+---
 
-| **WSTG-SESS**     | **Session Management Testing**                                             |        |       |
-| WSTG-SESS-01      | Testing for Session Management Schema                                      |        |       |
-| WSTG-SESS-02      | Testing for Cookies Attributes                                             |        |       |
-| WSTG-SESS-03      | Testing for Session Fixation                                               |        |       |
-| WSTG-SESS-04      | Testing for Exposed Session Variables                                      |        |       |
-| WSTG-SESS-05      | Testing for Cross Site Request Forgery                                     |        |       |
-| WSTG-SESS-06      | Testing for Logout Functionality                                           |        |       |
-| WSTG-SESS-07      | Testing Session Timeout                                                    |        |       |
-| WSTG-SESS-08      | Testing for Session Puzzling                                               |        |       |
-| WSTG-SESS-09      | Testing for Session Hijacking                                              |        |       |
-| WSTG-SESS-10      | Testing JSON Web Tokens                                                    |        |       |
-| **WSTG-INPV**     | **Input Validation Testing**                                               |        |       |
-| WSTG-INPV-01      | Testing for Reflected Cross Site Scripting                                 |        |       |
-| WSTG-INPV-02      | Testing for Stored Cross Site Scripting                                    |        |       |
-| WSTG-INPV-03      | Testing for HTTP Verb Tampering                                            |        |       |
-| WSTG-INPV-04      | Testing for HTTP Parameter pollution                                       |        |       |
-| WSTG-INPV-05      | Testing for SQL Injection                                                  |        |       |
-| WSTG-INPV-06      | Testing for LDAP Injection                                                 |        |       |
-| WSTG-INPV-07      | Testing for XML Injection                                                  |        |       |
-| WSTG-INPV-08      | Testing for SSI Injection                                                  |        |       |
-| WSTG-INPV-09      | Testing for XPath Injection                                                |        |       |
-| WSTG-INPV-10      | Testing for IMAP SMTP Injection                                            |        |       |
-| WSTG-INPV-11      | Testing for Code Injection                                                 |        |       |
-| WSTG-INPV-12      | Testing for Command Injection                                              |        |       |
-| WSTG-INPV-13      | Testing for Format String Injection                                        |        |       |
-| WSTG-INPV-14      | Testing for Incubated Vulnerabilities                                      |        |       |
-| WSTG-INPV-15      | Testing for HTTP Splitting Smuggling                                       |        |       |
-| WSTG-INPV-16      | Testing for HTTP Incoming Requests                                         |        |       |
-| WSTG-INPV-17      | Testing for Host Header Injection                                          |        |       |
-| WSTG-INPV-18      | Testing for Server-Side Template Injection                                 |        |       |
-| WSTG-INPV-19      | Testing for Server-Side Request Forgery                                    |        |       |
-| **WSTG-ERRH**     | **Error Handling**                                                         |        |       |
-| WSTG-ERRH-01      | Testing for Improper Error Handling                                        |        |       |
-| WSTG-ERRH-02      | Testing for Stack Traces                                                   |        |       |
-| **WSTG-CRYP**     | **Cryptography**                                                           |        |       |
-| WSTG-CRYP-01      | Testing for Weak Transport Layer Security                                  |        |       |
-| WSTG-CRYP-02      | Testing for Padding Oracle                                                 |        |       |
-| WSTG-CRYP-03      | Testing for Sensitive Information Sent Via Unencrypted Channels            |        |       |
-| WSTG-CRYP-04      | Testing for Weak Encryption                                                |        |       |
+## Session Management Testing
+
+| Test ID           | Test Name                                                                  | How to Test |
+|:------------------|:---------------------------------------------------------------------------|:------------|
+| **WSTG-SESS**     | **Session Management Testing**                                             |             |
+| WSTG-SESS-01      | Testing for Session Management Schema                                      | Burp Suite  |
+| WSTG-SESS-02      | Testing for Cookies Attributes                                             | Burp Suite  |
+| WSTG-SESS-03      | Testing for Session Fixation                                               | Burp Suite  |
+| WSTG-SESS-04      | Testing for Exposed Session Variables                                      | Burp Suite  |
+| WSTG-SESS-05      | Testing for Cross Site Request Forgery                                     | Burp Suite  |
+| WSTG-SESS-06      | Testing for Logout Functionality                                           | Burp Suite  |
+| WSTG-SESS-07      | Testing Session Timeout                                                    | Burp Suite  |
+| WSTG-SESS-08      | Testing for Session Puzzling                                               | Burp Suite  |
+| WSTG-SESS-09      | Testing for Session Hijacking                                              | Burp Suite  |
+| WSTG-SESS-10      | Testing JSON Web Tokens                                                    | Burp Suite  |
+
+## Session Management Testing
+
+| Test ID           | Test Name                                                                  | How to Test |
+|:------------------|:---------------------------------------------------------------------------|:------------|
+| **WSTG-INPV**     | **Input Validation Testing**                                               |             |
+| WSTG-INPV-01      | Testing for Reflected Cross Site Scripting                                 |             |
+| WSTG-INPV-02      | Testing for Stored Cross Site Scripting                                    |             |
+| WSTG-INPV-03      | Testing for HTTP Verb Tampering                                            |             |
+| WSTG-INPV-04      | Testing for HTTP Parameter pollution                                       |             |
+| WSTG-INPV-05      | Testing for SQL Injection                                                  |             |
+| WSTG-INPV-06      | Testing for LDAP Injection                                                 |             |
+| WSTG-INPV-07      | Testing for XML Injection                                                  |             |
+| WSTG-INPV-08      | Testing for SSI Injection                                                  |             |
+| WSTG-INPV-09      | Testing for XPath Injection                                                |             |
+| WSTG-INPV-10      | Testing for IMAP SMTP Injection                                            |             |
+| WSTG-INPV-11      | Testing for Code Injection                                                 |             |
+| WSTG-INPV-12      | Testing for Command Injection                                              |             |
+| WSTG-INPV-13      | Testing for Format String Injection                                        |             |
+| WSTG-INPV-14      | Testing for Incubated Vulnerabilities                                      |             |
+| WSTG-INPV-15      | Testing for HTTP Splitting Smuggling                                       |             |
+| WSTG-INPV-16      | Testing for HTTP Incoming Requests                                         |             |
+| WSTG-INPV-17      | Testing for Host Header Injection                                          |             |
+| WSTG-INPV-18      | Testing for Server-Side Template Injection                                 |             |
+| WSTG-INPV-19      | Testing for Server-Side Request Forgery                                    |             |
+
+---
+**TODO**
+- [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
+---
+
+## Error Handling
+
+| Test ID           | Test Name                                                                  | How to Test |
+|:------------------|:---------------------------------------------------------------------------|:------------|
+| **WSTG-ERRH**     | **Error Handling**                                                         |             |
+| WSTG-ERRH-01      | Testing for Improper Error Handling                                        |             |
+| WSTG-ERRH-02      | Testing for Stack Traces                                                   |             |
+
+## Cryptography
+
+| Test ID           | Test Name                                                                  | How to Test |
+|:------------------|:---------------------------------------------------------------------------|:------------|
+| **WSTG-CRYP**     | **Cryptography**                                                           |             |
+| WSTG-CRYP-01      | Testing for Weak Transport Layer Security                                  |             |
+| WSTG-CRYP-02      | Testing for Padding Oracle                                                 |             |
+| WSTG-CRYP-03      | Testing for Sensitive Information Sent Via Unencrypted Channels            |             |
+| WSTG-CRYP-04      | Testing for Weak Encryption                                                |             |
+
+---
+**TODO**
+```
+https://www.ssllabs.com/ssltest/analyze.html
+nmap --script ssl* -p 443 <target>
+```
+---
+
 | **WSTG-BUSLOGIC** | **Business Logic Testing**                                                 |        |       |
 | WSTG-BUSL-01      | Test Business Logic Data Validation                                        |        |       |
 | WSTG-BUSL-02      | Test Ability to Forge Requests                                             |        |       |
