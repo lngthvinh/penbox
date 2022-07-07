@@ -4,7 +4,7 @@ The following is the list of items to test during the assessment:
 
 ## Information Gathering
 
-| Test ID           | Test Name                                                                  | Todo |
+| Test ID           | Test Name                                                                  | How to Test |
 |:------------------|:---------------------------------------------------------------------------|--------|
 | **WSTG-INFO**     | **Information Gathering**                                                  |        |
 | WSTG-INFO-01      | Conduct Search Engine Discovery and Reconnaissance for Information Leakage | Google Dorking       |
@@ -18,9 +18,22 @@ The following is the list of items to test during the assessment:
 | WSTG-INFO-09      | Fingerprint Web Application                                                |        |       |
 | WSTG-INFO-10      | Map Application Architecture                                               |        |       |
 
+---
+**TODO**
+```
+Google Dorking
+Wappalyzer
+https://dnsdumpster.com/
+knockpy southtelecom.vn (long time)
+B=<domain>;subfinder -d $B | httprobe | tee ${PWD}/sub-domain/$B-output.txt | nuclei -t nuclei-templates/ -o ${PWD}/nuclei/$B-output.txt
+B=<ip>;nmap -sV $B -vv -oN ${PWD}/nmap/$B-output.txt -p-
+B=<url>;dirsearch -u $B -t 100 -r -i 200,301,302 -o ${PWD}/dirsearch/output.txt
+```
+---
 
+## Configuration and Deploy Management Testing
 
-| Test ID           | Test Name                                                                  | Todo |
+| Test ID           | Test Name                                                                  | How to Test |
 |:------------------|:---------------------------------------------------------------------------|--------|
 | **WSTG-CONF**     | **Configuration and Deploy Management Testing**                            |        |       |
 | WSTG-CONF-01      | Test Network Infrastructure Configuration                                  |        |       |
