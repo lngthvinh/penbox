@@ -41,7 +41,7 @@ Burp Suite + Vega + Zaproxy + Nikto (B=<domain/ip>;nikto -h $B -p 80,443 -o nikt
 | Test ID           | Test Name                                                                  | How to Test               |
 |:------------------|:---------------------------------------------------------------------------|:--------------------------|
 | **WSTG-CONF**     | **Configuration and Deploy Management Testing**                            |                           |
-| WSTG-CONF-01      | Test Network Infrastructure Configuration                                  |                           |
+| WSTG-CONF-01      | Test Network Infrastructure Configuration                                  | nmap                      |
 | WSTG-CONF-02      | Test Application Platform Configuration                                    | nuclei, dirsearch         |
 | WSTG-CONF-03      | Test File Extensions Handling for Sensitive Information                    | nikto                     |
 | WSTG-CONF-04      | Review Old Backup and Unreferenced Files for Sensitive Information         | dirsearch, nikto          |
