@@ -26,6 +26,7 @@ bash degoogle_hunter.sh <domain>
 Wappalyzer
 https://dnsdumpster.com/
 knockpy <domain> (long time)
+./sudomy -d southtelecom.vn [-b] -dP -eP -tO -wS -cF -pS -rS -sC -nT --httpx --dnsprobe -aI webanalyze --slack --html -sS
 python2 SimplyEmail.py -all -e <domain/ip>
 B=<domain>;subfinder -d $B | httprobe | tee sub-domain/$B-output.txt | nuclei -t nuclei-templates/ -o nuclei/$B-output.txt
 B=<ip>;nuclei -t nuclei-templates/ -u $B -o nuclei/$B-output.txt
@@ -37,21 +38,34 @@ Burp Suite + Vega + Zaproxy + Nikto (B=<domain/ip>;nikto -h $B -p 80,443 -o nikt
 
 ## Configuration and Deploy Management Testing
 
-| Test ID           | Test Name                                                                  | How to Test |
-|:------------------|:---------------------------------------------------------------------------|--------|
-| **WSTG-CONF**     | **Configuration and Deploy Management Testing**                            |        |       |
-| WSTG-CONF-01      | Test Network Infrastructure Configuration                                  |        |       |
-| WSTG-CONF-02      | Test Application Platform Configuration                                    |        |       |
-| WSTG-CONF-03      | Test File Extensions Handling for Sensitive Information                    |        |       |
-| WSTG-CONF-04      | Review Old Backup and Unreferenced Files for Sensitive Information         |        |       |
-| WSTG-CONF-05      | Enumerate Infrastructure and Application Admin Interfaces                  |        |       |
-| WSTG-CONF-06      | Test HTTP Methods                                                          |        |       |
-| WSTG-CONF-07      | Test HTTP Strict Transport Security                                        |        |       |
-| WSTG-CONF-08      | Test RIA Cross Domain Policy                                               |        |       |
-| WSTG-CONF-09      | Test File Permission                                                       |        |       |
-| WSTG-CONF-10      | Test for Subdomain Takeover                                                |        |       |
-| WSTG-CONF-11      | Test Cloud Storage                                                         |        |       |
-| WSTG-CONF-12      | Testing for Content Security Policy                                        |        |       |
+| Test ID           | Test Name                                                                  | How to Test               |
+|:------------------|:---------------------------------------------------------------------------|:--------------------------|
+| **WSTG-CONF**     | **Configuration and Deploy Management Testing**                            |                           |
+| WSTG-CONF-01      | Test Network Infrastructure Configuration                                  |                           |
+| WSTG-CONF-02      | Test Application Platform Configuration                                    | nuclei, dirsearch         |
+| WSTG-CONF-03      | Test File Extensions Handling for Sensitive Information                    | nikto                     |
+| WSTG-CONF-04      | Review Old Backup and Unreferenced Files for Sensitive Information         | dirsearch, nikto          |
+| WSTG-CONF-05      | Enumerate Infrastructure and Application Admin Interfaces                  | dirsearch, hydra, Zaproxy |
+| WSTG-CONF-06      | Test HTTP Methods                                                          | nmap                      |
+| WSTG-CONF-07      | Test HTTP Strict Transport Security                                        | curl                      |
+| WSTG-CONF-08      | Test RIA Cross Domain Policy                                               | Vega, Zaproxy, corsy      |
+| WSTG-CONF-09      | Test File Permission                                                       |                           |
+| WSTG-CONF-10      | Test for Subdomain Takeover                                                | sudomy                    |
+| WSTG-CONF-11      | Test Cloud Storage                                                         |                           |
+| WSTG-CONF-12      | Testing for Content Security Policy                                        | Google CSP Evaluator      |
+
+---
+**TODO**
+```
+nmap --script http-methods <target>
+curl -s -D- <url> | grep -i strict
+python3 corsy.py -u <url>
+https://csp-evaluator.withgoogle.com/
+```
+---
+
+| Test ID           | Test Name                                                                  | How to Test               |
+|:------------------|:---------------------------------------------------------------------------|:--------------------------|
 | **WSTG-IDNT**     | **Identity Management Testing**                                            |        |       |
 | WSTG-IDNT-01      | Test Role Definitions                                                      |        |       |
 | WSTG-IDNT-02      | Test User Registration Process                                             |        |       |
