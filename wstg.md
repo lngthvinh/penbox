@@ -4,27 +4,29 @@ The following is the list of items to test during the assessment:
 
 ## Information Gathering
 
-| Test ID           | Test Name                                                                  | How to Test |
-|:------------------|:---------------------------------------------------------------------------|:--------|
-| **WSTG-INFO**     | **Information Gathering**                                                  |        |
-| WSTG-INFO-01      | Conduct Search Engine Discovery and Reconnaissance for Information Leakage | Google Dorking       |
-| WSTG-INFO-02      | Fingerprint Web Server                                                     | Wappalyzer, nmap       |
-| WSTG-INFO-03      | Review Webserver Metafiles for Information Leakage                         | robots.txt       |       |
-| WSTG-INFO-04      | Enumerate Applications on Webserver                                        | nuclei, nmap, dirsearch       |
+| Test ID           | Test Name                                                                  | How to Test               |
+|:------------------|:---------------------------------------------------------------------------|:--------------------------|
+| **WSTG-INFO**     | **Information Gathering**                                                  |                           |
+| WSTG-INFO-01      | Conduct Search Engine Discovery and Reconnaissance for Information Leakage | Google Dorking            |
+| WSTG-INFO-02      | Fingerprint Web Server                                                     | Wappalyzer, nmap          |
+| WSTG-INFO-03      | Review Webserver Metafiles for Information Leakage                         | robots.txt                |
+| WSTG-INFO-04      | Enumerate Applications on Webserver                                        | nuclei, nmap, dirsearch   |
 | WSTG-INFO-05      | Review Webpage Content for Information Leakage                             | Burp Suite, Vega, Zaproxy |
-| WSTG-INFO-06      | Identify Application Entry Points                                          | Burp Suite, Vega, Zaproxy       |
-| WSTG-INFO-07      | Map Execution Paths Through Application                                    | Burp Suite, Vega, Zaproxy       |
-| WSTG-INFO-08      | Fingerprint Web Application Framework                                      | Wappalyzer       |
-| WSTG-INFO-09      | Fingerprint Web Application                                                |        |       |
-| WSTG-INFO-10      | Map Application Architecture                                               |        |       |
+| WSTG-INFO-06      | Identify Application Entry Points                                          | Burp Suite, Vega, Zaproxy |
+| WSTG-INFO-07      | Map Execution Paths Through Application                                    | Burp Suite, Vega, Zaproxy |
+| WSTG-INFO-08      | Fingerprint Web Application Framework                                      | Wappalyzer                |
+| WSTG-INFO-09      | Fingerprint Web Application                                                |                           |
+| WSTG-INFO-10      | Map Application Architecture                                               |                           |
 
 ---
 **TODO**
 ```
 Google Dorking
+bash degoogle_hunter.sh <domain>
 Wappalyzer
 https://dnsdumpster.com/
-knockpy southtelecom.vn (long time)
+knockpy <domain> (long time)
+python2 SimplyEmail.py -all -e <domain/ip>
 B=<domain>;subfinder -d $B | httprobe | tee sub-domain/$B-output.txt | nuclei -t nuclei-templates/ -o nuclei/$B-output.txt
 B=<ip>;nuclei -t nuclei-templates/ -u $B -o nuclei/$B-output.txt
 B=<ip>;nmap -sV $B -vv -oN nmap/$B-output.txt -p-
