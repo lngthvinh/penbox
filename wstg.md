@@ -77,24 +77,40 @@ https://csp-evaluator.withgoogle.com/
 
 ## Authentication Testing
 
+| Test ID           | Test Name                                                                  | How to Test            |
+|:------------------|:---------------------------------------------------------------------------|:-----------------------|
+| **WSTG-ATHN**     | **Authentication Testing**                                                 |                        |
+| WSTG-ATHN-01      | Testing for Credentials Transported over an Encrypted Channel              |                        |
+| WSTG-ATHN-02      | Testing for Default Credentials                                            | Burp Intruder, Hydra   |
+| WSTG-ATHN-03      | Testing for Weak Lock Out Mechanism                                        | Burp Intruder, Hydra   |
+| WSTG-ATHN-04      | Testing for Bypassing Authentication Schema                                | Burp Intruder, Zaproxy |
+| WSTG-ATHN-05      | Testing for Vulnerable Remember Password                                   |                        |
+| WSTG-ATHN-06      | Testing for Browser Cache Weakness                                         |                        |
+| WSTG-ATHN-07      | Testing for Weak Password Policy                                           |                        |
+| WSTG-ATHN-08      | Testing for Weak Security Question Answer                                  |                        |
+| WSTG-ATHN-09      | Testing for Weak Password Change or Reset Functionalities                  |                        |
+| WSTG-ATHN-10      | Testing for Weaker Authentication in Alternative Channel                   |                        |
+
+---
+**TODO**
+```
+hydra -l <username> -P <wordlist> ftp://MACHINE_IP
+hydra -l <username> -P <wordlist> MACHINE_IP -t 4 ssh
+hydra -l <username> -P <wordlist> MACHINE_IP http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect" -V
+```
+---
+
+## Authorization Testing
+
 | Test ID           | Test Name                                                                  | How to Test               |
 |:------------------|:---------------------------------------------------------------------------|:--------------------------|
-| **WSTG-ATHN**     | **Authentication Testing**                                                 |        |       |
-| WSTG-ATHN-01      | Testing for Credentials Transported over an Encrypted Channel              |        |       |
-| WSTG-ATHN-02      | Testing for Default Credentials                                            |        |       |
-| WSTG-ATHN-03      | Testing for Weak Lock Out Mechanism                                        |        |       |
-| WSTG-ATHN-04      | Testing for Bypassing Authentication Schema                                |        |       |
-| WSTG-ATHN-05      | Testing for Vulnerable Remember Password                                   |        |       |
-| WSTG-ATHN-06      | Testing for Browser Cache Weakness                                         |        |       |
-| WSTG-ATHN-07      | Testing for Weak Password Policy                                           |        |       |
-| WSTG-ATHN-08      | Testing for Weak Security Question Answer                                  |        |       |
-| WSTG-ATHN-09      | Testing for Weak Password Change or Reset Functionalities                  |        |       |
-| WSTG-ATHN-10      | Testing for Weaker Authentication in Alternative Channel                   |        |       |
 | **WSTG-ATHZ**     | **Authorization Testing**                                                  |        |       |
 | WSTG-ATHZ-01      | Testing Directory Traversal File Include                                   |        |       |
 | WSTG-ATHZ-02      | Testing for Bypassing Authorization Schema                                 |        |       |
 | WSTG-ATHZ-03      | Testing for Privilege Escalation                                           |        |       |
 | WSTG-ATHZ-04      | Testing for Insecure Direct Object References                              |        |       |
+
+
 | **WSTG-SESS**     | **Session Management Testing**                                             |        |       |
 | WSTG-SESS-01      | Testing for Session Management Schema                                      |        |       |
 | WSTG-SESS-02      | Testing for Cookies Attributes                                             |        |       |
