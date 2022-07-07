@@ -191,6 +191,8 @@ nmap --script ssl* -p 443 <target>
 ```
 ---
 
+| Test ID           | Test Name                                                                  | How to Test |
+|:------------------|:---------------------------------------------------------------------------|:------------|
 | **WSTG-BUSLOGIC** | **Business Logic Testing**                                                 |        |       |
 | WSTG-BUSL-01      | Test Business Logic Data Validation                                        |        |       |
 | WSTG-BUSL-02      | Test Ability to Forge Requests                                             |        |       |
