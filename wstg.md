@@ -5,7 +5,7 @@ The following is the list of items to test during the assessment:
 ## Information Gathering
 
 | Test ID           | Test Name                                                                  | How to Test |
-|:------------------|:---------------------------------------------------------------------------|--------|
+|:------------------|:---------------------------------------------------------------------------|:--------|
 | **WSTG-INFO**     | **Information Gathering**                                                  |        |
 | WSTG-INFO-01      | Conduct Search Engine Discovery and Reconnaissance for Information Leakage | Google Dorking       |
 | WSTG-INFO-02      | Fingerprint Web Server                                                     | Wappalyzer, nmap       |
@@ -20,14 +20,16 @@ The following is the list of items to test during the assessment:
 
 ---
 **TODO**
-```wrap
+```
 Google Dorking
 Wappalyzer
 https://dnsdumpster.com/
 knockpy southtelecom.vn (long time)
-B=<domain>;subfinder -d $B | httprobe | tee ${PWD}/sub-domain/$B-output.txt | nuclei -t nuclei-templates/ -o ${PWD}/nuclei/$B-output.txt
-B=<ip>;nmap -sV $B -vv -oN ${PWD}/nmap/$B-output.txt -p-
-B=<url>;dirsearch -u $B -t 100 -r -i 200,301,302 -o ${PWD}/dirsearch/output.txt
+B=<domain>;subfinder -d $B | httprobe | tee sub-domain/$B-output.txt | nuclei -t nuclei-templates/ -o nuclei/$B-output.txt
+B=<url>;nuclei -t nuclei-templates/ -u $B -o nuclei/$B-output.txt
+B=<ip>;nmap -sV $B -vv -oN nmap/$B-output.txt -p-
+B=<url>;dirsearch -u $B -t 100 -r -i 200,301,302 -o ${PWD}/dirsearch/$B-output.txt
+Burp Suite + Vega + Zaproxy + Nikto (B=<url>;nikto -h $B -p 80,443 -o nikto/$B-output.txt)
 ```
 ---
 
