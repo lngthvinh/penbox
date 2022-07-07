@@ -26,7 +26,7 @@ bash degoogle_hunter.sh <domain>
 Wappalyzer
 https://dnsdumpster.com/
 knockpy <domain> (long time)
-./sudomy -d southtelecom.vn [-b] -dP -eP -tO -wS -cF -pS -rS -sC -nT --httpx --dnsprobe -aI webanalyze --slack --html -sS
+./sudomy -d <domain> [-b] -dP -eP -tO -wS -cF -pS -rS -sC -nT --httpx --dnsprobe -aI webanalyze --slack --html -sS
 python2 SimplyEmail.py -all -e <domain/ip>
 B=<domain>;subfinder -d $B | httprobe | tee sub-domain/$B-output.txt | nuclei -t nuclei-templates/ -o nuclei/$B-output.txt
 B=<ip>;nuclei -t nuclei-templates/ -u $B -o nuclei/$B-output.txt
