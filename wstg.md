@@ -2,19 +2,26 @@
 
 The following is the list of items to test during the assessment:
 
+## Information Gathering
+
 | Test ID           | Test Name                                                                  | Todo |
 |:------------------|:---------------------------------------------------------------------------|--------|
 | **WSTG-INFO**     | **Information Gathering**                                                  |        |
-| WSTG-INFO-01      | Conduct Search Engine Discovery and Reconnaissance for Information Leakage |        |       |
-| WSTG-INFO-02      | Fingerprint Web Server                                                     |        |       |
-| WSTG-INFO-03      | Review Webserver Metafiles for Information Leakage                         |        |       |
-| WSTG-INFO-04      | Enumerate Applications on Webserver                                        |        |       |
-| WSTG-INFO-05      | Review Webpage Content for Information Leakage                             |        |       |
-| WSTG-INFO-06      | Identify Application Entry Points                                          |        |       |
-| WSTG-INFO-07      | Map Execution Paths Through Application                                    |        |       |
-| WSTG-INFO-08      | Fingerprint Web Application Framework                                      |        |       |
+| WSTG-INFO-01      | Conduct Search Engine Discovery and Reconnaissance for Information Leakage | Google Dorking       |
+| WSTG-INFO-02      | Fingerprint Web Server                                                     | Wappalyzer, nmap       |
+| WSTG-INFO-03      | Review Webserver Metafiles for Information Leakage                         | robots.txt       |       |
+| WSTG-INFO-04      | Enumerate Applications on Webserver                                        | nuclei, nmap, dirsearch       |
+| WSTG-INFO-05      | Review Webpage Content for Information Leakage                             | Burp Suite, Vega, Zaproxy |
+| WSTG-INFO-06      | Identify Application Entry Points                                          | Burp Suite, Vega, Zaproxy       |
+| WSTG-INFO-07      | Map Execution Paths Through Application                                    | Burp Suite, Vega, Zaproxy       |
+| WSTG-INFO-08      | Fingerprint Web Application Framework                                      | Wappalyzer       |
 | WSTG-INFO-09      | Fingerprint Web Application                                                |        |       |
 | WSTG-INFO-10      | Map Application Architecture                                               |        |       |
+
+
+
+| Test ID           | Test Name                                                                  | Todo |
+|:------------------|:---------------------------------------------------------------------------|--------|
 | **WSTG-CONF**     | **Configuration and Deploy Management Testing**                            |        |       |
 | WSTG-CONF-01      | Test Network Infrastructure Configuration                                  |        |       |
 | WSTG-CONF-02      | Test Application Platform Configuration                                    |        |       |
