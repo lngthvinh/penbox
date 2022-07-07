@@ -64,14 +64,21 @@ https://csp-evaluator.withgoogle.com/
 ```
 ---
 
+## Identity Management Testing
+
 | Test ID           | Test Name                                                                  | How to Test               |
 |:------------------|:---------------------------------------------------------------------------|:--------------------------|
-| **WSTG-IDNT**     | **Identity Management Testing**                                            |        |       |
-| WSTG-IDNT-01      | Test Role Definitions                                                      |        |       |
-| WSTG-IDNT-02      | Test User Registration Process                                             |        |       |
-| WSTG-IDNT-03      | Test Account Provisioning Process                                          |        |       |
-| WSTG-IDNT-04      | Testing for Account Enumeration and Guessable User Account                 |        |       |
-| WSTG-IDNT-05      | Testing for Weak or Unenforced Username Policy                             |        |       |
+| **WSTG-IDNT**     | **Identity Management Testing**                                            |                           |
+| WSTG-IDNT-01      | Test Role Definitions                                                      | Burp's Autorize extension |
+| WSTG-IDNT-02      | Test User Registration Process                                             |                           |
+| WSTG-IDNT-03      | Test Account Provisioning Process                                          |                           |
+| WSTG-IDNT-04      | Testing for Account Enumeration and Guessable User Account                 |                           |
+| WSTG-IDNT-05      | Testing for Weak or Unenforced Username Policy                             |                           |
+
+## Authentication Testing
+
+| Test ID           | Test Name                                                                  | How to Test               |
+|:------------------|:---------------------------------------------------------------------------|:--------------------------|
 | **WSTG-ATHN**     | **Authentication Testing**                                                 |        |       |
 | WSTG-ATHN-01      | Testing for Credentials Transported over an Encrypted Channel              |        |       |
 | WSTG-ATHN-02      | Testing for Default Credentials                                            |        |       |
