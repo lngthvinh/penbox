@@ -26,10 +26,10 @@ Wappalyzer
 https://dnsdumpster.com/
 knockpy southtelecom.vn (long time)
 B=<domain>;subfinder -d $B | httprobe | tee sub-domain/$B-output.txt | nuclei -t nuclei-templates/ -o nuclei/$B-output.txt
-B=<url>;nuclei -t nuclei-templates/ -u $B -o nuclei/$B-output.txt
+B=<ip>;nuclei -t nuclei-templates/ -u $B -o nuclei/$B-output.txt
 B=<ip>;nmap -sV $B -vv -oN nmap/$B-output.txt -p-
-B=<url>;dirsearch -u $B -t 100 -r -i 200,301,302 -o ${PWD}/dirsearch/$B-output.txt
-Burp Suite + Vega + Zaproxy + Nikto (B=<url>;nikto -h $B -p 80,443 -o nikto/$B-output.txt)
+B=<domain/ip>;dirsearch -u http://$B -t 100 -r -i 200,301,302 -o ${PWD}/dirsearch/$B-output.txt
+Burp Suite + Vega + Zaproxy + Nikto (B=<domain/ip>;nikto -h $B -p 80,443 -o nikto/$B-output.txt)
 ```
 ---
 
