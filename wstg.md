@@ -30,7 +30,7 @@ knockpy <domain> (long time)
 python2 SimplyEmail.py -all -e <domain/ip>
 B=<domain>;subfinder -d $B | httprobe | tee sub-domain/$B-output.txt | nuclei -t nuclei-templates/ -o nuclei/$B-output.txt
 B=<ip>;nuclei -t nuclei-templates/ -u $B -o nuclei/$B-output.txt
-B=<ip>;nmap -sV $B -vv -oN nmap/$B-output.txt -p- --min-rate 5000 -T5
+B=<ip>;nmap -sC -sV $B -vv -oN nmap/$B-output.txt -p- --min-rate 5000 -T5
 B=<domain/ip>;dirsearch -u http://$B -t 100 -r -i 200,301,302,401,403 -o ${PWD}/dirsearch/$B-output.txt
 Burp Suite + Vega + Zaproxy + Nikto (B=<domain/ip>;nikto -h $B -p 80,443 -o nikto/$B-output.txt)
 ```
