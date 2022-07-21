@@ -18,6 +18,8 @@ tweakpng
 
 ```
 tplmap
+https://github.com/ambionics/laravel-exploits
+https://github.com/ambionics/phpggc
 ```
 
 ```
