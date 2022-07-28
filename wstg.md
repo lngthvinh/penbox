@@ -16,23 +16,46 @@ The following is the list of items to test during the assessment:
 | WSTG-INFO-07      | Map Execution Paths Through Application                                    | Burp Suite, Vega, Zaproxy  |
 | WSTG-INFO-08      | Fingerprint Web Application Framework                                      | Wappalyzer                 |
 | WSTG-INFO-09      | Fingerprint Web Application                                                |                            |
-| WSTG-INFO-10      | Map Application Architecture                                               |                            |
+| WSTG-INFO-10      | Map Application Architecture                                               | Database, Authen, Proxy..  |
 
 ---
 **TODO**
 ```
-Google Dorking
-bash degoogle_hunter.sh <domain>
-python3 JSFinderPlus.py -u <url>
-Wappalyzer
+// Subdomain
 https://dnsdumpster.com/
 knockpy <domain> (long time)
 ./sudomy -d <domain> [-b] -dP -eP -tO -wS -cF -pS -rS -sC -nT --httpx --dnsprobe -aI webanalyze --slack --html -sS
-python2 SimplyEmail.py -all -e <domain/ip>
+
+//*//
 B=<domain>;subfinder -d $B | httprobe | tee sub-domain/$B-output.txt | nuclei -t nuclei-templates/ -o nuclei/$B-output.txt
+
+// Information Disclosure
+Google Dorking
+bash degoogle_hunter.sh <domain>
+python3 JSFinderPlus.py -u <url>
+python2 SimplyEmail.py -all -e <domain/ip>
+
+// Determine the version and type of web server
+Wappalyzer
 B=<ip>;nuclei -t nuclei-templates/ -u $B -o nuclei/$B-output.txt
 B=<ip>;nmap -sC -sV $B -vv -oN nmap/$B-output.txt -p- --min-rate 5000 -T5
+
+// Identify hidden or obfuscated information
+robots.txt
+sitemap.xml
+.well-known/security.txt
+humans.txt
 B=<domain/ip>;dirsearch -u http://$B -t 100 -r -i 200,301,302,401,403 -o ${PWD}/dirsearch/$B-output.txt
+
+// Fingerprint
+HTTP headers
+Cookies
+HTML source code
+Specific files and folders
+File extensions
+Error messages
+
+// Scan
 Burp Suite + Vega + Zaproxy + Nikto (B=<domain/ip>;nikto -h $B -p 80,443 -o nikto/$B-output.txt)
 ```
 ---
