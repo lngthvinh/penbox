@@ -23,6 +23,7 @@ The following is the list of items to test during the assessment:
 ```
 Google Dorking
 bash degoogle_hunter.sh <domain>
+python3 JSFinderPlus.py -u <url>
 Wappalyzer
 https://dnsdumpster.com/
 knockpy <domain> (long time)
