@@ -130,7 +130,7 @@ https://csp-evaluator.withgoogle.com/
 ```
 // Test Cache poisoning
 cd tools/Web-Cache-Vulnerability-Scanner/
-./wcvs -u https://worldsms.vn/ -hw wordlists/headers -pw wordlists/parameters -f
+./wcvs -u <url> -hw wordlists/headers -pw wordlists/parameters -f
 
 // Test Password
 hydra -l <username> -P <wordlist> ftp://MACHINE_IP
