@@ -37,7 +37,7 @@ python2 SimplyEmail.py -all -e <domain/ip>
 
 // Determine the version and type of web server
 Wappalyzer
-B=<ip>;nuclei -t nuclei-templates/ -u $B -o nuclei/$B-output.txt
+B=<host>;nuclei -t nuclei-templates/ -u http://$B -o nuclei/$B-output.txt
 B=<ip>;nmap -sC -sV $B -vv -oN nmap/$B-output.txt -p- --min-rate 5000 -T5
 
 // Identify hidden or obfuscated information
