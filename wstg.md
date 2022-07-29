@@ -24,7 +24,7 @@ The following is the list of items to test during the assessment:
 // Subdomain
 https://dnsdumpster.com/
 knockpy <domain> --no-http-code 404 500 530 -th 100 -o knockpy (long time)
-./sudomy -d <domain> [-b] -dP -eP -tO -wS -cF -pS -rS -sC -nT --httpx --dnsprobe -aI webanalyze --slack --html -sS
+bash sudomy -d <domain> [-b] -dP -eP -tO -wS -cF -pS -rS -sC -nT --httpx --dnsprobe -aI webanalyze --slack --html -sS
 
 //*//
 B=<domain>;subfinder -d $B | httprobe | tee sub-domain/$B-output.txt | nuclei -t nuclei-templates/ -o nuclei/$B-output.txt
