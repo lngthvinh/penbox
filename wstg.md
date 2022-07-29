@@ -129,6 +129,7 @@ https://csp-evaluator.withgoogle.com/
 **TODO**
 ```
 // Test Cache poisoning
+cd tools/Web-Cache-Vulnerability-Scanner/
 ./wcvs -u https://worldsms.vn/ -hw wordlists/headers -pw wordlists/parameters -f
 
 // Test Password
