@@ -1,3 +1,10 @@
+# Dump subdomain
+```
+https://dnsdumpster.com/
+knockpy <domain> --no-http-code 404 500 530 -th 100 -o knockpy (long time)
+bash sudomy -d <domain> [-b] -dP -eP -tO -wS -cF -pS -rS -sC -nT --httpx --dnsprobe -aI webanalyze --slack --html -sS
+```
+
 # Port Scan - Service discovery
 
 ```
