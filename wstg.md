@@ -45,7 +45,7 @@ robots.txt
 sitemap.xml
 .well-known/security.txt
 humans.txt
-B=<domain/ip>;dirsearch -u http://$B -t 100 -r -i 200,301,302,401,403 -o ${PWD}/dirsearch/$B-output.txt
+B=<host>;dirsearch -u http://$B -t 100 -r -i 200,301,302,401,403 -o ${PWD}/dirsearch/$B-output.txt
 
 // Fingerprint
 HTTP headers
