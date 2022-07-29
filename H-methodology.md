@@ -55,6 +55,11 @@ Zaproxy
 /clientaccesspolicy.xml
 /.well-known/
 Check also comments in the main and secondary pages.
+
+// Check information disclosure
+bash degoogle_hunter.sh <domain>
+python3 JSFinderPlus.py -u <url>
+python2 SimplyEmail.py -all -e <domain/ip>
 ```
 
 ### SSL/TLS vulnerabilites
