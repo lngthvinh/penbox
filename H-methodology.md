@@ -40,13 +40,6 @@ If the **source code** of the application is available in **github**, apart of p
 - Can you **access any of these files** exploiting some vulnerability?
 - Is there any **interesting information in the github** (solved and not solved) **issues**? Or in **commit history** (maybe some **password introduced inside an old commit**)?
 
-### Automatic scanners
-```
-Vega
-Burp Suite
-Zaproxy
-```
-
 ### Fingerprint
 ```
 /robots.txt
@@ -69,13 +62,15 @@ https://www.ssllabs.com/ssltest/analyze.html
 testssl <url>
 ```
 
-### Spidering
-```
-Vega
-Zaproxy
-```
-
 ### Brute Force directories and files
 ```
 B=<host>;dirsearch -u http://$B -t 100 -r -i 200,301,302,401,403 -o ${PWD}/dirsearch/$B-output.txt
 ```
+
+### Automatic scanners
+```
+Vega
+Burp Suite
+Zaproxy
+```
+
