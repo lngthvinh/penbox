@@ -93,7 +93,7 @@ curl -s -D- <url> | grep -i strict
 // Test Cross Domain Policy
 python3 corsy.py -u <url>
 
-// Testing Content Security Policy
+// Test Content Security Policy
 https://csp-evaluator.withgoogle.com/
 ```
 ---
@@ -128,6 +128,10 @@ https://csp-evaluator.withgoogle.com/
 ---
 **TODO**
 ```
+// Test Cache poisoning
+./wcvs -u https://worldsms.vn/ -hw wordlists/headers -pw wordlists/parameters -f
+
+// Test Password
 hydra -l <username> -P <wordlist> ftp://MACHINE_IP
 hydra -l <username> -P <wordlist> MACHINE_IP -t 4 ssh
 hydra -l <username> -P <wordlist> MACHINE_IP http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect" -V
