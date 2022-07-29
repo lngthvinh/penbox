@@ -1,17 +1,19 @@
-# Dump subdomain
+# H-methodology
+
+## Dump subdomain
 ```
 https://dnsdumpster.com/
 knockpy <domain> --no-http-code 404 500 530 -th 100 -o knockpy (long time)
 bash sudomy -d <domain> [-b] -dP -eP -tO -wS -cF -pS -rS -sC -nT --httpx --dnsprobe -aI webanalyze --slack --html -sS
 ```
 
-# Port Scan - Service discovery
+## Port Scan - Service discovery
 
 ```
 B=<ip>;nmap -vv -sV -sC -O -p- -n -Pn --min-rate 5000 -T5 -oN nmap/$B-output.txt $B
 ```
 
-# Searching service version exploits
+## Searching service version exploits
 
 ```
 // Browser
@@ -25,7 +27,7 @@ searchsploit -m 7618 #Paste the exploit in current directory
 msf> search platform:windows port:135 target:XP type:exploit
 ```
 
-# Pentesting services
+## Pentesting services
 
 ### Tech Detect
 ```
