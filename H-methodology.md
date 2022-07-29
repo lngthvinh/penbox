@@ -20,5 +20,57 @@ msf> search platform:windows port:135 target:XP type:exploit
 
 # Pentesting services
 
+### Tech Detect
 ```
+Wappalyzer
+B=<host>;nuclei -t nuclei-templates/ -u http://$B -o nuclei/$B-output.txt
+```
+
+### Check if any WAF
+```
+nmap -p80 --script http-waf-detect <ip>
+```
+
+### Source code review
+If the **source code** of the application is available in **github**, apart of performing by **your own a White box test** of the application there is **some information** that could be **useful** for the current **Black-Box testing**:
+- Is there a **Change-log or Readme or Version** file or anything with **version info accessible** via web?
+- How and where are saved the **credentials**? Is there any (accessible?) **file** with credentials (usernames or passwords)?
+- Are **passwords** in **plain text**, **encrypted** or which **hashing algorithm** is used?
+- Is it using any **master key** for encrypting something? Which **algorithm** is used?
+- Can you **access any of these files** exploiting some vulnerability?
+- Is there any **interesting information in the github** (solved and not solved) **issues**? Or in **commit history** (maybe some **password introduced inside an old commit**)?
+
+### Automatic scanners
+```
+Vega
+Burp Suite
+Zaproxy
+```
+
+### Fingerprint
+```
+/robots.txt
+/sitemap.xml
+/crossdomain.xml
+/clientaccesspolicy.xml
+/.well-known/
+Check also comments in the main and secondary pages.
+```
+
+### SSL/TLS vulnerabilites
+```
+nmap --script ssl* -p 443 <target>
+https://www.ssllabs.com/ssltest/analyze.html
+testssl <url>
+```
+
+### Spidering
+```
+Vega
+Zaproxy
+```
+
+### Brute Force directories and files
+```
+B=<host>;dirsearch -u http://$B -t 100 -r -i 200,301,302,401,403 -o ${PWD}/dirsearch/$B-output.txt
 ```
