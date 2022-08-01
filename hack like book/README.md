@@ -24,6 +24,6 @@ python3 smuggler.py -u <url> -v 3
 ```
 python3 h2csmuggler.py -x https://southtelecom.vn/ -t --threads 5 -v
 ```
-- ☐ Server Side Inclusion/Edge Side Inclusion
+- ☐ Server Side Inclusion/Edge Side Inclusion (Detected by Burp Scanner)
 - ☐ Uncovering Cloudflare
 - ☐ XSLT Server Side Injection
