@@ -1,13 +1,17 @@
 # W-methodology
 
 ## Proxies
-- ☐ Cache Poisoning/Cache Deception
+- ☐ Abusing hop-by-hop headers
+```bash
+for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers); do python3 hbh-header-abuse-test.py -u "https://worldsms.vn/" -x "$HEADER" -v; :'sleep 1'; done
 ```
+- ☐ Cache Poisoning/Cache Deception
+```bash
 cd tools/Web-Cache-Vulnerability-Scanner/
 ./wcvs -u <url> -hw wordlists/headers -pw wordlists/parameters -f
 ```
 - ☐ HTTP Request Smuggling 
-```
+```bash
 Burp - HTTP Request Smuggler
 - Right click on a request and click Extensions > HTTP HTTP Request Smuggler > Smuggle Probe.
 ```
