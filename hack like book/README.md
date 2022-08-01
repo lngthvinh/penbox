@@ -3,7 +3,7 @@
 ## Proxies
 - ☐ Abusing hop-by-hop headers
 ```bash
-for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers); do python3 hbh-header-abuse-test.py -u "https://worldsms.vn/" -x "$HEADER" -v; :'sleep 1'; done
+for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers); do python3 hbh-header-abuse-test.py -u <url> -x "$HEADER" -v; :'sleep 1'; done
 ```
 - ☐ Cache Poisoning/Cache Deception
 ```bash
