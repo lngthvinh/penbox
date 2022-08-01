@@ -1,4 +1,4 @@
-# W-methodology
+# Methodology
 
 ## Proxies
 - ☐ Abusing hop-by-hop headers
@@ -16,6 +16,9 @@ cd tools/Web-Cache-Vulnerability-Scanner/
 ```bash
 Burp - HTTP Request Smuggler
 - Right click on a request and click Extensions > HTTP HTTP Request Smuggler > Smuggle Probe.
+
+wget https://raw.githubusercontent.com/gwen001/pentest-tools/master/smuggler.py
+python3 smuggler.py -u <url> -v 3
 ```
 - ☐ H2C Smuggling
 - ☐ Server Side Inclusion/Edge Side Inclusion
