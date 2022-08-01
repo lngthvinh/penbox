@@ -45,3 +45,6 @@ python3 h2csmuggler.py -x https://southtelecom.vn/ -t --threads 5 -v
 - ☐ XSS
 - ☐ XSSI
 - ☐ XS-Search
+ --------------------------------------------------------------
+| Multiple Forwarding Headers Poisoning
+ --------------------------------------------------------------
