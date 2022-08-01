@@ -30,7 +30,7 @@ python3 h2csmuggler.py -x https://southtelecom.vn/ -t --threads 5 -v
 
 ## User input
 ### Reflected Values
-- ☐ Client Side Template Injection
+- ☐ Client Side Template Injection (Like SSTI)
 - ☐ Command Injection
 - ☐ CRLF
 - ☐ Dangling Markup
