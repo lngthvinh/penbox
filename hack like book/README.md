@@ -7,6 +7,8 @@ for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMin
 ```
 - ☐ Cache Poisoning/Cache Deception
 ```bash
+go install -v github.com/Hackmanit/Web-Cache-Vulnerability-Scanner@latest
+cp go/Web-Cache-Vulnerability-Scanner tools/Web-Cache-Vulnerability-Scanner/wcvs
 cd tools/Web-Cache-Vulnerability-Scanner/
 ./wcvs -u <url> -hw wordlists/headers -pw wordlists/parameters -f
 ```
