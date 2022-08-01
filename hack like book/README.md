@@ -27,3 +27,21 @@ python3 h2csmuggler.py -x https://southtelecom.vn/ -t --threads 5 -v
 - ☐ Server Side Inclusion/Edge Side Inclusion (Detected by Burp Scanner)
 - ☐ Uncovering Cloudflare
 - ☐ XSLT Server Side Injection
+
+## User input
+###Reflected Values
+- ☐ Client Side Template Injection
+- ☐ Command Injection
+- ☐ CRLF
+- ☐ Dangling Markup
+- ☐ File Inclusion/Path Traversal
+- ☐ Open Redirect
+- ☐ Prototype Pollution to XSS
+- ☐ Server Side Inclusion/Edge Side Inclusion
+- ☐ Server Side Request Forgery
+- ☐ Server Side Template Injection
+- ☐ Reverse Tab Nabbing
+- ☐ XSLT Server Side Injection
+- ☐ XSS
+- ☐ XSSI
+- ☐ XS-Search
