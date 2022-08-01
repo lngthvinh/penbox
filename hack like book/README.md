@@ -21,6 +21,9 @@ wget https://raw.githubusercontent.com/gwen001/pentest-tools/master/smuggler.py
 python3 smuggler.py -u <url> -v 3
 ```
 - ☐ H2C Smuggling
+```
+python3 h2csmuggler.py -x https://southtelecom.vn/ -t --threads 5 -v
+```
 - ☐ Server Side Inclusion/Edge Side Inclusion
 - ☐ Uncovering Cloudflare
 - ☐ XSLT Server Side Injection
