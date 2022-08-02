@@ -68,6 +68,13 @@ wfuzz -X POST -c -w file_inclusion_linux.txt --hw 0 -d "foo=FUZZ" http://10.10.1
 - 🟥 __Prototype Pollution to XSS__ (NodeJS)
 - 🟥 __Server Side Inclusion/Edge Side Inclusion__ (Detected by 👉 Burp Scanner)
 - 🟥 __Server Side Request Forgery__
+```
+// Tool SSRFmap
+python3 ssrfmap.py -r <REQFILE> -p <PARAM> -m readfiles,portscan
+
+// Tool Gopherus (SSRF to RCE)
+https://github.com/tarunkant/Gopherus
+```
 - 🟥 __Server Side Template Injection__ (Detected by 👉 Burp Scanner)
 ```
 // Tool tplmap
