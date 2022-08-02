@@ -50,6 +50,10 @@ original_cmd_by_server||sleep+5
 original_cmd_by_server;nslookup+<webhook>
 ```
 - ☐ CRLF
+```
+// Tool crlfuzz
+crlfuzz -u <url>
+```
 - ☐ Dangling Markup
 - ☐ File Inclusion/Path Traversal
 - ☐ Open Redirect
