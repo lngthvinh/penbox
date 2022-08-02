@@ -67,6 +67,9 @@ wfuzz -X POST -c -w file_inclusion_linux.txt --hw 0 -d "foo=FUZZ" http://10.10.1
 - 🟥 __Server Side Inclusion/Edge Side Inclusion__ (Detected by 👉 Burp Scanner)
 - 🟥 __Server Side Request Forgery__
 ```
+// Tool See-SURF (Test vulnerable parameter)
+python3 see-surf.py -H <HOST> -b <BURP> -t 10
+
 // Tool SSRFmap
 python3 ssrfmap.py -r <REQFILE> -p <PARAM> -m readfiles,portscan
 
