@@ -64,7 +64,7 @@ wfuzz -X POST -c -w file_inclusion_linux.txt --hw 0 -d "foo=FUZZ" http://10.10.1
 
 // Can use Burp Active Scanner
 ```
-- ☐ Open Redirect
+- ☐ Open Redirect (Detected by Burp Scanner)
 - ☐ Prototype Pollution to XSS
 - ☐ Server Side Inclusion/Edge Side Inclusion (Detected by Burp Scanner)
 - ☐ Server Side Request Forgery
