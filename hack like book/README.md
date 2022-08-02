@@ -61,8 +61,6 @@ wfuzz -c -w /usr/share/wfuzz/wordlist/Injections/Traversal.txt --hw 0 http://10.
 // Deep Fuzzing (recommend)
 wfuzz -X GET -c -w file_inclusion_linux.txt --hw 0 http://10.10.10.10/nav.php?page=FUZZ
 wfuzz -X POST -c -w file_inclusion_linux.txt --hw 0 -d "foo=FUZZ" http://10.10.10.10/nav.php
-
-// Can use Burp Active Scanner
 ```
 - 🟥 __Open Redirect__ (Detected by 👉 Burp Scanner)
 - 🟥 __Prototype Pollution to XSS__ (NodeJS)
