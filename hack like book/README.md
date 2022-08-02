@@ -54,7 +54,7 @@ original_cmd_by_server;nslookup+<webhook>
 crlfuzz -u <url>
 ```
 - 🟥 __Dangling Markup__
-- 🟥 __File Inclusion/Path Traversal__
+- 🟥 __File Inclusion/Path Traversal__ (Detected by 👉 Burp Scanner)
 ```
 // Fast Fuzzing
 wfuzz -c -w /usr/share/wfuzz/wordlist/Injections/Traversal.txt --hw 0 http://10.10.10.10/nav.php?page=FUZZ
