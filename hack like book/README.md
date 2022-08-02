@@ -59,7 +59,7 @@ crlfuzz -u <url>
 // Fast Fuzzing
 wfuzz -c -w /usr/share/wfuzz/wordlist/Injections/Traversal.txt --hw 0 http://10.10.10.10/nav.php?page=FUZZ
 // Deep Fuzzing (recommend)
-wfuzz -c -w file_inclusion_linux.txt --hw 0 http://10.10.10.10/nav.php?page=FUZZ
+wfuzz -X GET -c -w file_inclusion_linux.txt --hw 0 http://10.10.10.10/nav.php?page=FUZZ
 
 // Can use Burp Active Scanner
 ```
