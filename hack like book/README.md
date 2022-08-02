@@ -28,7 +28,6 @@ python3 smuggler.py -u <url> -v 3
 // Tool h2csmuggler
 python3 h2csmuggler.py -x <url> -t --threads 5 -v
 ```
-- ☐ Server Side Inclusion/Edge Side Inclusion (Detected by Burp Scanner)
 - ☐ Uncovering Cloudflare
 - ☐ XSLT Server Side Injection
 
@@ -58,7 +57,7 @@ crlfuzz -u <url>
 - ☐ File Inclusion/Path Traversal
 - ☐ Open Redirect
 - ☐ Prototype Pollution to XSS
-- ☐ Server Side Inclusion/Edge Side Inclusion
+- ☐ Server Side Inclusion/Edge Side Inclusion (Detected by Burp Scanner)
 - ☐ Server Side Request Forgery
 - ☐ Server Side Template Injection
 - ☐ Reverse Tab Nabbing
