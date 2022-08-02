@@ -55,6 +55,14 @@ crlfuzz -u <url>
 ```
 - ☐ Dangling Markup
 - ☐ File Inclusion/Path Traversal
+```
+// Fuzzing
+wfuzz -c -w /usr/share/wfuzz/wordlist/Injections/Traversal.txt --hw 0 http://10.10.10.10/nav.php?page=FUZZ
+
+// Auto_Wordlists: https://github.com/carlospolop/Auto_Wordlists
+
+// Can use Burp Active Scanner
+```
 - ☐ Open Redirect
 - ☐ Prototype Pollution to XSS
 - ☐ Server Side Inclusion/Edge Side Inclusion (Detected by Burp Scanner)
