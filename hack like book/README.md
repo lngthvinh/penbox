@@ -22,7 +22,7 @@ python3 smuggler.py -u <url> -v 3
 ```
 - ☐ H2C Smuggling
 ```
-python3 h2csmuggler.py -x https://southtelecom.vn/ -t --threads 5 -v
+python3 h2csmuggler.py -x <url> -t --threads 5 -v
 ```
 - ☐ Server Side Inclusion/Edge Side Inclusion (Detected by Burp Scanner)
 - ☐ Uncovering Cloudflare
