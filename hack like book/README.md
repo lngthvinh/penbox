@@ -83,7 +83,14 @@ python2 tplmap.py -u 'http://10.10.10.10/page?name=Box*' --os-shell
 ```
 - 🔴 __Reverse Tab Nabbing__ (Detected by 👉 Burp Extension - Discover Reverse Tabnabbing)
 - 🔴 __XSLT Server Side Injection__
-- 🔴 __XSS__
+- 🔴 __XSS__ (Detected by 👉 Burp Active Scanner)
+```
+// Tool DalFox
+dalfox url http://10.10.10.10/?search=a -p search
+
+// Tool XSStrike
+python3 xsstrike.py -u "http://10.10.10.10/?search=a"
+```
 - 🔴 __XSSI__
 - 🔴 __XS-Search__
 
