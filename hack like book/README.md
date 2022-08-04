@@ -140,3 +140,12 @@ xsrfprobe -u <URL>
 python3 STEWS-vuln-detect.py -u <URL> -1
 ```
 - 🔴 PostMessage Vulnerabilities
+
+### HTTP Headers
+- 🔴 Clickjacking
+```
+Can use Tool Clickjacking Check Online
+```
+- 🔴 Content Security Policy bypass
+- 🔴 Cookies Hacking
+- 🔴 CORS - Misconfigurations & Bypass
