@@ -100,7 +100,7 @@ python3 xsstrike.py -u "http://10.10.10.10/?search=a"
 - 🔴 __NoSQL Injection__
 ```
 // Tool Nosql injection username and password enumeration script
-python3 nosqli-user-pass-enum.py -h
+python3 nosql-login-bypass.py -t <TARGET> -u username -p password
 
 // NoSQL-Attack-Suite
 python3 nosql-login-bypass.py -h
