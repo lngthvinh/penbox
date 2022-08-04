@@ -127,3 +127,16 @@ sqlmap -u <URL> -p <TESTPARAMETER> --threads=10 --risk=3 --level=5 --dbms=<DBMS>
 // Tool XCat
 xcat --help
 ```
+
+### Forms, WebSockets and PostMsgs
+- 🔴 Cross Site Request Forgery (Detected by 👉 Burp Active Scanner)
+```
+// Tool XSRFProbe
+xsrfprobe -u <URL>
+```
+- 🔴 Cross-site WebSocket hijacking (CSWSH)
+```
+// Tool STEWS
+python3 STEWS-vuln-detect.py -u <URL> -1
+```
+- 🔴 PostMessage Vulnerabilities
