@@ -98,7 +98,32 @@ python3 xsstrike.py -u "http://10.10.10.10/?search=a"
 ### Search functionalities
 - 🔴 __File Inclusion/Path Traversal__ (🔼 previous step)
 - 🔴 __NoSQL Injection__
+```
+// Tool Nosql injection username and password enumeration script
+python3 nosqli-user-pass-enum.py -h
+
+// NoSQL-Attack-Suite
+python3 nosql-login-bypass.py -h
+```
 - 🔴 __LDAP Injection__
+```
+// Fuzzing
+https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/master/LDAP%20Injection/Intruder/LDAP_FUZZ.txt
+```
 - 🔴 __ReDoS__
+```
+Regular Expression Denial of Service
+// Tools
+https://github.com/doyensec/regexploit
+https://devina.io/redos-checker
+```
 - 🔴 __SQL Injection__
+```
+// Tool SQLmap
+sqlmap -u <URL> -p <TESTPARAMETER> --threads=10 --risk=3 --level=5 --dbms=<DBMS> --banner
+```
 - 🔴 __XPATH Injection__
+```
+// Tool XCat
+xcat --help
+```
