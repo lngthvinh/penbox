@@ -28,6 +28,7 @@ python3 smuggler.py -u <url> -v 3
 // Tool h2csmuggler
 python3 h2csmuggler.py -x <url> -t --threads 5 -v
 ```
+- 🔴 __Server Side Inclusion/Edge Side Inclusion__ (Detected by 👉 Burp Active Scanner)
 - 🔴 __Uncovering Cloudflare__
 - 🔴 __XSLT Server Side Injection__
 
@@ -82,7 +83,7 @@ https://github.com/tarunkant/Gopherus
 python2 tplmap.py -u 'http://10.10.10.10/page?name=Box*' --os-shell
 ```
 - 🔴 __Reverse Tab Nabbing__ (Detected by 👉 Burp Extension - Discover Reverse Tabnabbing)
-- 🔴 __XSLT Server Side Injection__
+- 🔴 __XSLT Server Side Injection__ (🔼 previous step)
 - 🔴 __XSS__ (Detected by 👉 Burp Active Scanner)
 ```
 // Tool DalFox
@@ -94,3 +95,10 @@ python3 xsstrike.py -u "http://10.10.10.10/?search=a"
 - 🔴 __XSSI__ (Detected by 👉 Burp Extension - Detect Dynamic JS_
 - 🔴 __XS-Search__
 
+### Search functionalities
+- 🔴 __File Inclusion/Path Traversal__ (🔼 previous step)
+- 🔴 __NoSQL Injection__
+- 🔴 __LDAP Injection__
+- 🔴 __ReDoS__
+- 🔴 __SQL Injection__
+- 🔴 __XPATH Injection__
