@@ -142,9 +142,9 @@ python3 STEWS-vuln-detect.py -u <URL> -1
 - 🔴 PostMessage Vulnerabilities
 
 ### HTTP Headers
-- 🔴 Clickjacking
+- 🔴 Clickjacking (Detected by 👉 Burp Scanner)
 ```
-Can use Tool Clickjacking Check Online
+OR can use tool Clickjacking checker online
 ```
 - 🔴 Content Security Policy bypass
 - 🔴 Cookies Hacking
