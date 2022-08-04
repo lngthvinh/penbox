@@ -91,6 +91,6 @@ dalfox url http://10.10.10.10/?search=a -p search
 // Tool XSStrike
 python3 xsstrike.py -u "http://10.10.10.10/?search=a"
 ```
-- 🔴 __XSSI__
+- 🔴 __XSSI__ (Detected by 👉 Burp Extension - Detect Dynamic JS_
 - 🔴 __XS-Search__
 
