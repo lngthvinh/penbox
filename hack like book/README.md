@@ -156,5 +156,20 @@ https://cspvalidator.org/
 ```
 HttpOnly
 TRACE HEADER
+nmap --script http-trace -d <ip>
 ```
-- 🔴 CORS - Misconfigurations & Bypass
+- 🔴 CORS - Misconfigurations & Bypass (Detected by 👉 Burp Scanner)
+```
+// Tool Corsy
+python3 corsy.py -u <URL> -t 20 --header "Cookie: session=___"
+```
+
+### Bypasses
+2FA/OTP Bypass
+Bypass Payment Process
+Captcha Bypass
+Login Bypass
+Race Condition
+Rate Limit Bypass
+Reset Forgotten Password Bypass
+Registration Vulnerabilities
