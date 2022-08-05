@@ -152,5 +152,9 @@ OR can use tool Clickjacking checker online
 https://csp-evaluator.withgoogle.com/
 https://cspvalidator.org/
 ```
-- 🔴 Cookies Hacking
+- 🔴 Cookies Hacking (Detected by 👉 Burp Scanner)
+```
+HttpOnly
+TRACE HEADER
+```
 - 🔴 CORS - Misconfigurations & Bypass
