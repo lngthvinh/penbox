@@ -171,5 +171,20 @@ python3 corsy.py -u <URL> -t 20 --header "Cookie: session=___"
 - 🔴 Login Bypass
 - 🔴 Race Condition
 - 🔴 Rate Limit Bypass
+```
+// Changing IP origin using headers
+
+X-Originating-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+X-Remote-IP: 127.0.0.1
+X-Remote-Addr: 127.0.0.1
+X-Client-IP: 127.0.0.1
+X-Host: 127.0.0.1
+X-Forwared-Host: 127.0.0.1
+
+#or use double X-Forwared-For header
+X-Forwarded-For:
+X-Forwarded-For: 127.0.0.1
+```
 - 🔴 Reset Forgotten Password Bypass
 - 🔴 Registration Vulnerabilities
