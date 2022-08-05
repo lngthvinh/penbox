@@ -1,7 +1,7 @@
 # Methodology
 
 ## Proxies
-- 🔴 __Abusing hop-by-hop headers__
+- 🔵 __Abusing hop-by-hop headers__
 ```bash
 // Tool hbh-header-abuse-test
 for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers); do python3 hbh-header-abuse-test.py -u <url> -x "$HEADER" -v; :'sleep 1'; done
@@ -29,7 +29,7 @@ python3 smuggler.py -u <url> -v 3
 python3 h2csmuggler.py -x <url> -t --threads 5 -v
 ```
 - 🔴 __Server Side Inclusion/Edge Side Inclusion__ (Detected by 👉 Burp Active Scanner)
-- 🔴 __Uncovering Cloudflare__
+- 🔵 __Uncovering Cloudflare__
 - 🔴 __XSLT Server Side Injection__
 
 ## User input
@@ -110,7 +110,7 @@ python3 nosql-login-bypass.py -t <TARGET> -u <USERNAME> -p <PASSWORD>
 // Fuzzing
 https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/master/LDAP%20Injection/Intruder/LDAP_FUZZ.txt
 ```
-- 🔴 __ReDoS__
+- 🟠 __ReDoS__
 ```
 Regular Expression Denial of Service
 // Tools
@@ -142,7 +142,7 @@ python3 STEWS-vuln-detect.py -u <URL> -1
 - 🔴 PostMessage Vulnerabilities
 
 ### HTTP Headers
-- 🔴 Clickjacking (Detected by 👉 Burp Scanner)
+- 🔵 Clickjacking (Detected by 👉 Burp Scanner)
 ```
 OR can use tool Clickjacking checker online
 ```
