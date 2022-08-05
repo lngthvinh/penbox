@@ -147,5 +147,10 @@ python3 STEWS-vuln-detect.py -u <URL> -1
 OR can use tool Clickjacking checker online
 ```
 - 🔴 Content Security Policy bypass
+```
+// Checking CSP Policies Online
+https://csp-evaluator.withgoogle.com/
+https://cspvalidator.org/
+```
 - 🔴 Cookies Hacking
 - 🔴 CORS - Misconfigurations & Bypass
