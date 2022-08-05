@@ -188,3 +188,20 @@ X-Forwarded-For: 127.0.0.1
 ```
 - 🔴 Reset Forgotten Password Bypass
 - 🔴 Registration Vulnerabilities
+
+### Structured objects / Specific functionalities
+- 🔴 Deserialization
+```
+Cookie Deserialization
+```
+- 🔴 Email Header Injection
+```
+// PHPMail exploit
+https://exploitbox.io/paper/Pwning-PHP-Mail-Function-For-Fun-And-RCE.html
+```
+- 🟠 JWT Vulnerabilities
+```
+// Tool Burp - JSON Web Tokens
+// Tool Burp - JWT Editor
+```
+- 🔴 XML External Entity
