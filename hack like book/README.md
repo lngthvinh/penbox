@@ -220,6 +220,13 @@ python3 fuxploider.py -u <URL> --cookies <COOKIES> --not-regex "SORRY.."
 - 🔴 SAML Attacks (Tool 👉 Burp - SAML Raider)
 ### Other Helpful Vulnerabilities
 - 🔴 Domain/Subdomain takeover
+```
+// Tool Nuclei
+```
+- 🔴 Broken link takeover
+```
+// Tool broken-link-checker
+```
 - 🔴 IDOR
 ```
 Burp Suite plugin Authz
