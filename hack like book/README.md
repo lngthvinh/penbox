@@ -204,4 +204,18 @@ https://exploitbox.io/paper/Pwning-PHP-Mail-Function-For-Fun-And-RCE.html
 // Tool Burp - JSON Web Tokens
 // Tool Burp - JWT Editor
 ```
-- 🔴 XML External Entity
+- 🔴 XML External Entity (Detected by 👉 Burp Active Scanner)
+
+### Files
+- 🔴 File Upload
+- 🔴 Formula Injection
+- 🔴 PDF Injection
+- 🔴 Server Side XSS
+### External Identity Management
+- 🔴 OAUTH to Account takeover
+- 🔴 SAML Attacks
+### Other Helpful Vulnerabilities
+- 🔴 Domain/Subdomain takeover
+- 🔴 IDOR
+- 🔴 Parameter Pollution
+- 🔴 Unicode Normalization vulnerability
