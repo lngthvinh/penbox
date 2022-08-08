@@ -221,5 +221,10 @@ python3 fuxploider.py -u <URL> --cookies <COOKIES> --not-regex "SORRY.."
 ### Other Helpful Vulnerabilities
 - 🔴 Domain/Subdomain takeover
 - 🔴 IDOR
+```
+Burp Suite plugin Authz
+Burp Suite plugin AuthMatrix
+Burp Suite plugin Authorize
+```
 - 🔴 Parameter Pollution
 - 🔴 Unicode Normalization vulnerability
