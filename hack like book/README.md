@@ -208,6 +208,10 @@ https://exploitbox.io/paper/Pwning-PHP-Mail-Function-For-Fun-And-RCE.html
 
 ### Files
 - 🔴 File Upload
+```
+// Tool Fuxploider
+python3 fuxploider.py -u <URL> --cookies <COOKIES> --not-regex "SORRY.."
+```
 - 🔴 Formula Injection
 - 🔴 PDF Injection
 - 🔴 Server Side XSS
