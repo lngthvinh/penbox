@@ -212,12 +212,12 @@ https://exploitbox.io/paper/Pwning-PHP-Mail-Function-For-Fun-And-RCE.html
 // Tool Fuxploider
 python3 fuxploider.py -u <URL> --cookies <COOKIES> --not-regex "SORRY.."
 ```
-- 🔴 Formula Injection
-- 🔴 PDF Injection
-- 🔴 Server Side XSS
+- 🔴 Formula Injection (Skip)
+- 🔴 PDF Injection (Skip)
+- 🔴 Server Side XSS (Skip)
 ### External Identity Management
 - 🔴 OAUTH to Account takeover
-- 🔴 SAML Attacks
+- 🔴 SAML Attacks (Tool 👉 Burp - SAML Raider)
 ### Other Helpful Vulnerabilities
 - 🔴 Domain/Subdomain takeover
 - 🔴 IDOR
