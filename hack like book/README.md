@@ -4,7 +4,7 @@
 - 🟡 __Abusing hop-by-hop headers__
 ```bash
 // Tool hbh-header-abuse-test
-for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers); do python3 hbh-header-abuse-test.py -u <url> -x "$HEADER" -v; :'sleep 1'; done
+for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers); do python3 hbh-header-abuse-test.py -u <url> -x "$HEADER"; :'sleep 1'; done
 ```
 - 🔴 __Cache Poisoning/Cache Deception__
 ```bash
