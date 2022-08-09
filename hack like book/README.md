@@ -222,6 +222,7 @@ python3 fuxploider.py -u <URL> --cookies <COOKIES> --not-regex "SORRY.."
 - 🔴 Domain/Subdomain takeover
 ```
 // Tool Nuclei
+nuclei -t nuclei-templates/ -u <URL>
 ```
 - 🔴 Broken link takeover
 ```
