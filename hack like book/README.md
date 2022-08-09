@@ -226,6 +226,8 @@ python3 fuxploider.py -u <URL> --cookies <COOKIES> --not-regex "SORRY.."
 - 🔴 Broken link takeover
 ```
 // Tool broken-link-checker
+npm install broken-link-checker -g
+blc http://yoursite.com -ro
 ```
 - 🔴 IDOR
 ```
