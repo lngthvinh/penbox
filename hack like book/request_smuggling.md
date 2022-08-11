@@ -20,7 +20,7 @@ Transfer-Encoding: chunked
 
 0
 
-X
+x
 ```
 
 ## CL.TE vulnerabilities
