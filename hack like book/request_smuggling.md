@@ -80,3 +80,26 @@ Content-Length: 0
 SMUGGLED
 ```
 Observe that every second request you send receives a 404 response, confirming that you have caused the back-end to append the subsequent request to the smuggled prefix.
+
+## HTTP/2 request smuggling via CRLF injection
+1. Send the most recent POST / request to Burp Repeater and remove your session cookie before resending the request.
+2. Expand the Inspector's Request Attributes section and change the protocol to HTTP/2.
+3. Using the Inspector, add an arbitrary header to the request. Append the sequence \r\n to the header's value, followed by the Transfer-Encoding: chunked header:
+
+__Name__
+```
+foo
+```
+__Value__
+```
+bar\r\n
+Transfer-Encoding: chunked
+```
+
+4. In the body, attempt to smuggle an arbitrary prefix as follows:
+```
+0
+
+SMUGGLED
+```
+Observe that every second request you send receives a 404 response, confirming that you have caused the back-end to append the subsequent request to the smuggled prefix.
