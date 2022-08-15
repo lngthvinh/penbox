@@ -1,6 +1,6 @@
 # Methodology
 
-[JS Bp Bp](#🟠-__CRLF__)
+[JS Bp Bp](#🟠CRLF)
 
 ## Proxies
 #### 🟡 __Abusing hop-by-hop headers__
