@@ -1,6 +1,6 @@
 # Methodology
 
-[JS Bp Bp](#🟡-__Abusing-hop-by-hop-headers__)
+[JS Bp Bp](#🟠-__CRLF__)
 
 ## Proxies
 #### 🟡 __Abusing hop-by-hop headers__
@@ -51,7 +51,7 @@ original_cmd_by_server||sleep+5
 // Test when no effect on the application's response
 original_cmd_by_server;nslookup+<webhook>
 ```
-- 🟠 __CRLF__
+#### 🟠 __CRLF__
 ```
 // Tool crlfuzz
 crlfuzz -u <url>
