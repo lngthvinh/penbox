@@ -1,5 +1,7 @@
 # Methodology
 
+[Abusing hop-by-hop headers](#Abusing hop-by-hop headers)
+
 ## Proxies
 - 🟡 __Abusing hop-by-hop headers__
 ```bash
