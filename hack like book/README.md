@@ -1,8 +1,6 @@
 # Methodology
 
- | Title | Category | Points | Flag
- | ------ | ------ | ------ | ------ |
- | [Discord](#Methodology) | Misc | 1 | `Flag{Cookie_Han_Hoan}` |
+[JS Bp Bp](#🟡-__Abusing-hop-by-hop-headers__)
 
 ## Proxies
 #### 🟡 __Abusing hop-by-hop headers__
