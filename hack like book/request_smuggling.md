@@ -91,6 +91,7 @@ Transfer-Encoding: chunked
 
 SMUGGLED
 ```
+Observe that every second request you send receives a 404 response, confirming that you have caused the back-end to append the subsequent request to the smuggled prefix.
 
 ## Response queue poisoning via H2.TE request smuggling
 ```
