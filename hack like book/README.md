@@ -1,6 +1,6 @@
 # Methodology
 
-[Abusing hop-by-hop headers](#Abusing hop-by-hop headers)
+[Abusing hop-by-hop headers](#🟡 __Abusing hop-by-hop headers__)
 
 ## Proxies
 #### 🟡 __Abusing hop-by-hop headers__
