@@ -3,7 +3,7 @@
 [Abusing hop-by-hop headers](#Abusing hop-by-hop headers)
 
 ## Proxies
-- 🟡 __Abusing hop-by-hop headers__
+#### 🟡 __Abusing hop-by-hop headers__
 ```bash
 // Tool hbh-header-abuse-test
 for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers); do python3 hbh-header-abuse-test.py -u <url> -x "$HEADER"; :'sleep 1'; done
