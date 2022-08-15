@@ -71,7 +71,7 @@ Transfer-Encoding
 : chunked
 ```
 
-## H2.CL vulnerabilities
+## Finding H2.CL vulnerabilities using 404 techniques
 ```
 POST / HTTP/2
 Host: vulnerable-website.com
@@ -81,7 +81,7 @@ SMUGGLED
 ```
 Observe that every second request you send receives a 404 response, confirming that you have caused the back-end to append the subsequent request to the smuggled prefix.
 
-## H2.TE vulnerabilities
+## Finding H2.TE vulnerabilities using 404 techniques
 ```
 POST / HTTP/2
 Host: vulnerable-website.com
