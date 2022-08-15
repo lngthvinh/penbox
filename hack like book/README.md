@@ -14,7 +14,7 @@ cp go/Web-Cache-Vulnerability-Scanner tools/Web-Cache-Vulnerability-Scanner/wcvs
 cd tools/Web-Cache-Vulnerability-Scanner/
 ./wcvs -u <url> -hw wordlists/headers -pw wordlists/parameters -f
 ```
-- 🔴 __HTTP Request Smuggling__ 
+- 🔴 __HTTP Request Smuggling__ (Detected by 👉 Burp Scanner)
 ```bash
 // Burp - HTTP Request Smuggler
 - Right click on a request and click Extensions > HTTP HTTP Request Smuggler > Smuggle Probe.
