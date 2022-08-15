@@ -48,8 +48,8 @@ Content-Length: 15
 
 x=1
 0
-\n\r
-\n\r
+\r\n
+\r\n
 ```
 
 ## TE.TE behavior: obfuscating the TE header
@@ -103,6 +103,8 @@ Transfer-Encoding: chunked
 
 GET /x HTTP/1.1
 Host: vulnerable-website.com
+\r\n
+\r\n
 ```
 Most of the time, you will receive your own 404 response. Any other response code indicates that you have successfully captured a response intended for the admin user. Repeat this process until you capture a 302 response containing the admin's new post-login session cookie.
 
