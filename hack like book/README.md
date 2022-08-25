@@ -12,7 +12,7 @@ for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMin
 ```bash
 // Tool Web-Cache-Vulnerability-Scanner
 go install -v github.com/Hackmanit/Web-Cache-Vulnerability-Scanner@latest
-cp go/Web-Cache-Vulnerability-Scanner tools/Web-Cache-Vulnerability-Scanner/wcvs
+cp go/bin/Web-Cache-Vulnerability-Scanner tools/Web-Cache-Vulnerability-Scanner/wcvs
 cd tools/Web-Cache-Vulnerability-Scanner/
 ./wcvs -u <url> -hw wordlists/headers -pw wordlists/parameters -f
 ```
