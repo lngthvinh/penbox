@@ -8,13 +8,16 @@ bash sudomy -d <domain> [-b] -dP -eP -tO -wS -cF -pS -rS -sC -nT --httpx --dnspr
 ```
 
 ## Port Scan - Service discovery
-
 ```
 B=<ip>;nmap -vv -sV -sC -O -p- -n -Pn --min-rate 5000 -T5 -oN nmap/$B-output.txt $B
 ```
 
-## Searching service version exploits
+## Virtual Host discovery
+```
+reverse ip tool online
+```
 
+## Searching service version exploits
 ```
 // Browser
 Search in "google" or others: <service_name> [version] exploit
