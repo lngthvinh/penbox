@@ -12,9 +12,11 @@ bash sudomy -d <domain> [-b] -dP -eP -tO -wS -cF -pS -rS -sC -nT --httpx --dnspr
 B=<ip>;nmap -vv -sV -sC -O -p- -n -Pn --min-rate 5000 -T5 -oN nmap/$B-output.txt $B
 ```
 
-## Virtual Host discovery
+## Bruteforce Virtual Host
 ```
-reverse ip tool online
+Using Burpsuite intruder
+- Disable Update Host Header
+- Payload list: SecLists/Discovery/DNS
 ```
 
 ## Searching service version exploits
