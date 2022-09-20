@@ -4,18 +4,20 @@
 
 ## Proxies
 #### 🟡 __Abusing hop-by-hop headers__
-```bash
-// Tool hbh-header-abuse-test
-for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers); do python3 hbh-header-abuse-test.py -u <url> -x "$HEADER"; :'sleep 1'; done
-```
+
+   - Tool hbh-header-abuse-test
+
+         for HEADER in $(cat /usr/share/seclists/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers); do python3 hbh-header-abuse-test.py -u <url> -x "$HEADER"; :'sleep 1'; done
+
 #### 🔴 __Cache Poisoning/Cache Deception__
-```bash
-// Tool Web-Cache-Vulnerability-Scanner
-go install -v github.com/Hackmanit/Web-Cache-Vulnerability-Scanner@latest
-cp go/bin/Web-Cache-Vulnerability-Scanner tools/Web-Cache-Vulnerability-Scanner/wcvs
-cd tools/Web-Cache-Vulnerability-Scanner/
-./wcvs -u <url> -hw wordlists/headers -pw wordlists/parameters -f
-```
+  
+   - Tool Web-Cache-Vulnerability-Scanner
+                    
+         go install -v github.com/Hackmanit/Web-Cache-Vulnerability-Scanner@latest
+         cp go/bin/Web-Cache-Vulnerability-Scanner tools/Web-Cache-Vulnerability-Scanner/wcvs
+         cd tools/Web-Cache-Vulnerability-Scanner/
+         ./wcvs -u <url> -hw wordlists/headers -pw wordlists/parameters -f
+
 #### 🔴 __HTTP Request Smuggling__ (Detected by 👉 Burp Scanner)
 ```bash
 // Burp - HTTP Request Smuggler
