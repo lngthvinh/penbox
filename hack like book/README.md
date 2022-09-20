@@ -171,8 +171,7 @@ Regular Expression Denial of Service
 
 ### HTTP Headers
 #### 🟡 Clickjacking (Detected by 👉 Burp Scanner)
-
-         OR can use tool Clickjacking checker online
+OR can use tool Clickjacking checker online
 
 #### 🟢 Content Security Policy bypass
 
@@ -183,8 +182,10 @@ Regular Expression Denial of Service
 
 #### 🟢 Cookies Hacking (Detected by 👉 Burp Scanner)
 
-         HttpOnly
-         TRACE HEADER
+   - HttpOnly
+   - TRACE HEADER
+   - use nmap
+
          nmap --script http-trace -d <ip>
 
 #### 🟠 CORS - Misconfigurations & Bypass (Detected by 👉 Burp Scanner)
@@ -222,7 +223,7 @@ Regular Expression Denial of Service
 ### Structured objects / Specific functionalities
 #### 🔴 Deserialization
 
-         Cookie Deserialization
+   - Cookie Deserialization
 
 #### 🔴 Email Header Injection
 
@@ -266,9 +267,9 @@ Regular Expression Denial of Service
 
 #### 🔴 IDOR
 
-         Burp Suite plugin Authz
-         Burp Suite plugin AuthMatrix
-         Burp Suite plugin Authorize
+   - Burp Suite plugin Authz
+   - Burp Suite plugin AuthMatrix
+   - Burp Suite plugin Authorize
 
 #### 🔴 Parameter Pollution
 #### 🔴 Unicode Normalization vulnerability
