@@ -79,7 +79,7 @@ testssl <url>
 
 ### Brute Force directories and files
 ```
-B=<host>;dirsearch -u http://$B -t 100 -r -i 200,301,302,401,403 -o ${PWD}/dirsearch/$B-output.txt
+B=<host>;dirsearch -t 100 -r -i 200,301,302,401,403 -u http://$B -o ${PWD}/dirsearch/$B-output.txt
 ```
 
 ### Brute Force parameter
